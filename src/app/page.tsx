@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/_components/generic/ButtonGeneric";
-import Image from "next/image";
 
 export default function Home() {
   return (
