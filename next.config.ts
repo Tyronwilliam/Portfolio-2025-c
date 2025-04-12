@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  optimizePackageImports: ["@heroicons/react"],
-
+  // optimizePackageImports: ["@heroicons/react"],
   /* config options here */
   // images: {
   //   remotePatterns: [
