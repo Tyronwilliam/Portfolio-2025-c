@@ -10,12 +10,13 @@ export function AnimatedCards({
   next: any;
 }) {
   return (
-    <div className="relative w-[220px] h-full overflow-hidden flex flex-col justify-between items-end grow">
+    <div className="relative w-full md:w-[220px] min-h-[369px] md:h-full md:overflow-hidden flex flex-col justify-between items-end grow">
       <AnimatePresence initial={false}>
         {/* INDEX 0 */}
         <motion.div
+          layoutId={current.name}
           key={current.name}
-          className="absolute h-[168px] w-full flex justify-between rounded-3xl gap-5 glassomorph_effect_bis  py-5.5 px-8"
+          className="absolute h-[168px] w-full flex justify-between rounded-3xl gap-5 glassomorph_effect_bis px-2 py-4  md:py-5.5 md:px-8"
           initial={{ x: 0, y: 0, opacity: 1 }}
           animate={{ x: 0, y: 0, opacity: 1 }}
           exit={{
@@ -38,7 +39,9 @@ export function AnimatedCards({
             />
           </div>
           <div className="flex flex-col justify-between w-full">
-            <h3 className="text-lg font-bold light-black ">{current.name}</h3>
+            <h3 className="text-sm md:text-lg font-bold light-black ">
+              {current.name}
+            </h3>
             <div>
               <p className="text-xs light-black">{current.description}</p>
               <div className="yellow-bg p-0.5 w-[32px] text-center h-fit text-[9px] rounded-sm text-white mt-1">
@@ -51,8 +54,9 @@ export function AnimatedCards({
 
         {/* INDEX 1 */}
         <motion.div
+          layoutId={next.name}
           key={next.name}
-          className="absolute h-[168px] w-full flex justify-between  gap-5 glassomorph_effect_bis  py-5.5 px-8"
+          className="absolute h-[168px] w-full flex justify-between rounded-3xl gap-5 glassomorph_effect_bis px-2 py-4  md:py-5.5 md:px-8"
           initial={{ x: 300, y: "115%", opacity: 0 }}
           animate={{ x: 0, y: "115%", opacity: 1 }}
           exit={{
@@ -75,7 +79,9 @@ export function AnimatedCards({
             />
           </div>
           <div className="flex flex-col justify-between w-full">
-            <h3 className="text-lg font-bold light-black ">{next.name}</h3>
+            <h3 className="text-sm md:text-lg font-bold light-black ">
+              {next.name}
+            </h3>
             <div>
               <p className="text-xs light-black">{next.description}</p>
               <div className="yellow-bg p-0.5 w-[32px] text-center h-fit text-[9px] rounded-sm text-white mt-1">

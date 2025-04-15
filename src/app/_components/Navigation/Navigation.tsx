@@ -30,7 +30,7 @@ const navigationItem: NavigationItem[] = [
 
 export const Navigation = () => {
   return (
-    <header className="w-full flex relative pb-5">
+    <header className="w-full hidden md:flex relative pb-5">
       <div className="absolute w-full h-1 rounded-md bottom-0 glassomorph_effect"></div>
       <nav className="">
         <ul className="w-full flex gap-7 px-12">

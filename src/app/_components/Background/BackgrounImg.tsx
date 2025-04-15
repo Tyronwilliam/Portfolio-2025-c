@@ -8,7 +8,6 @@ export const BackgroundImg = ({}: Props) => {
       src={Pink}
       alt="stair"
       fill
-      style={{ objectFit: "cover" }}
       quality={100}
       className="cover absolute w-full h-full z-0"
     />

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useCallback, useEffect, useMemo, useState } from "react";
 import { BsBookmarkDashFill } from "react-icons/bs";
 import Agence from "../../../../public/images/agence.png";
 import Csb from "../../../../public/images/csb.png";
@@ -81,7 +81,7 @@ const arsenal = [
 export const Accueil = ({}: Props) => {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
+  const slide = useCallback(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % projects.length);
     }, 5000);
@@ -91,32 +91,32 @@ export const Accueil = ({}: Props) => {
   const current = projects[index % projects.length];
   const next = projects[(index + 1) % projects.length];
   return (
-    <section className="w-full h-full grid grid-rows-6 auto-rows-[62px] gap-3">
-      <div className="row-span-4 flex gap-12 h-[362px]">
+    <section className="w-full h-fit flex flex-col md:grid md:grid-rows-6 md:auto-rows-[62px] gap-3 z-50">
+      <div className="md:row-span-4 flex flex-col md:flex-row gap-12 md:h-[362px]">
         <LeftSide />
-        {/* <div className="glassomorph_effect w-[33%] h-full flex overflow-hidden gap-1"></div> */}
-        {/* TEST */}
         <AnimatedCards current={current} next={next} />
-        {/* END TEST  */}
-      </div>
-      <div className="row-span-4 grid grid-cols-6">
+      </div>{" "}
+      <div className="md:row-span-4 md:grid md:grid-cols-6 w-full h-full">
         {/* Deuxième div - un peu plus petite */}
-        <section className="col-span-2 p-4 glassomorph_effect">
+        <section className="col-span-2 p-4 glassomorph_effect h-full w-full">
           <h3 className="tracking-wider text-2xl font-bold light-black mb-2">
             Arsenal{" "}
           </h3>{" "}
-          <div className="px-12 w-full h-full">
-            <Swiper
-              effect={"cards"}
-              grabCursor={true}
-              modules={[EffectCards]}
-              className="mySwiper "
-            >
-              {arsenal.map((tech, index) => (
-                <SwiperSlide key={index}>{tech}</SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+          {/* <div className=" w-full h-full "> */}
+          <Swiper
+            effect={"cards"}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="mySwiper px-5 md:px-12 min-h-[240px] w-[250px] h-[260px]"
+            style={{ height: "calc(100% - 10%)" }}
+          >
+            {arsenal.map((tech, index) => (
+              <SwiperSlide key={index} className="w-full min-h-full">
+                {tech}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* </div> */}
         </section>
       </div>
     </section>

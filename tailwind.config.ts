@@ -1,3 +1,5 @@
+import { Poppins } from "next/font/google";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class", '[data-theme="dark"]'], // supporte class et data-theme
@@ -21,7 +23,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "sans-serif"],
+        Poppins: ["var(--font-poppins)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
     },

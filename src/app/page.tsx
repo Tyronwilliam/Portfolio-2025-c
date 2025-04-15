@@ -9,10 +9,10 @@ import { Accueil } from "./_components/Accueil/Accueil";
 
 export default function Home() {
   return (
-    <section className="relative flex flex-col items-center justify-center w-full h-screen p-10 overflow-hidden">
+    <section className="relative w-full min-h-full flex flex-col items-center justify-center p-5 md:p-10 md:overflow-hidden">
       <Glass>
         <Name />
-        <section className="w-full h-full flex flex-col gap-3 px-3 max-w-[1178px] mx-auto">
+        <section className="w-full min-h-screen md:h-full flex flex-col gap-3 md:px-3 max-w-[1178px] mx-auto">
           <Navigation />
           <Accueil />
         </section>
