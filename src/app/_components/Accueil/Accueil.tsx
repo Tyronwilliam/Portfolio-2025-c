@@ -1,69 +1,54 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-import { ReactElement, useCallback, useEffect, useMemo, useState } from "react";
-import { BsBookmarkDashFill } from "react-icons/bs";
-import Agence from "../../../../public/images/agence.png";
-import Csb from "../../../../public/images/csb.png";
-import Coop from "../../../../public/images/lacoop.png";
-import { LeftSide } from "./LeftSide";
-import { AnimatedCards } from "./AnimatedCards";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import {
-  FaCss3Alt,
-  FaGitAlt,
-  FaHtml5,
-  FaNodeJs,
-  FaReact,
-  FaSass,
-  FaVuejs,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript } from "react-icons/si";
-import { TbSql } from "react-icons/tb";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards } from "swiper/modules";
+import { StaticImageData } from 'next/image'
+import { ReactElement, useCallback, useEffect, useState } from 'react'
+import { BsBookmarkDashFill } from 'react-icons/bs'
+import { FaCss3Alt, FaGitAlt, FaHtml5, FaNodeJs, FaReact, FaSass, FaVuejs } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
+import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
+import { SiTypescript } from 'react-icons/si'
+import { TbSql } from 'react-icons/tb'
+import { EffectCards } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import Agence from '../../../../public/images/agence.png'
+import Coop from '../../../../public/images/lacoop.png'
+import CSB from '../../../../public/images/CSB.png'
+import { AnimatedCards } from './AnimatedCards'
+import { LeftSide } from './LeftSide'
 
-import "swiper/css";
-import "swiper/css/effect-cards";
+import 'swiper/css'
+import 'swiper/css/effect-cards'
 
-type Props = {};
+type Props = {}
 
 export interface ProjectItem {
-  name: string;
-  description: string;
-  rating: string;
-  icon: ReactElement;
-  img: StaticImageData;
+  name: string
+  description: string
+  rating: string
+  icon: ReactElement
+  img: StaticImageData
 }
 const projects: ProjectItem[] = [
   {
-    name: "Agence Graziani",
-    description: "App pour une agence de casting",
-    rating: "4.9",
-    icon: (
-      <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />
-    ),
-    img: Agence,
+    name: 'Agence Graziani',
+    description: 'App pour une agence de casting',
+    rating: '4.9',
+    icon: <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />,
+    img: Agence
   },
   {
-    name: "LA COOP",
-    description: "Site vitrine pour un bar",
-    rating: "5",
-    icon: (
-      <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />
-    ),
-    img: Coop,
+    name: 'CSB Klinik',
+    description: "Site d'actualité & e-commerce",
+    rating: '5',
+    icon: <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />,
+    img: CSB
   },
   {
-    name: "CSB Klinik",
-    description: "Site d'actualité & e-commerce dans la medecine",
-    rating: "5",
-    icon: (
-      <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />
-    ),
-    img: Csb,
-  },
-];
+    name: 'LA COOP',
+    description: 'Site vitrine pour un bar',
+    rating: '5',
+    icon: <BsBookmarkDashFill className=" text-blue-500 w-[16px] h-[19px] ml-auto" />,
+    img: Coop
+  }
+]
 const arsenal = [
   <RiTailwindCssFill className="block w-18 h-18 text-[#38BDF8]" />, // TailwindCSS
   <FaHtml5 className="w-12 h-12 text-[#E34F26]" />, // HTML
@@ -76,49 +61,55 @@ const arsenal = [
   <FaVuejs className="w-12 h-12 text-[#42B883]" />, // VueJS
   <FaGitAlt className="w-12 h-12 text-[#F05032]" />, // Git
   <FaNodeJs className="w-12 h-12 text-[#339933]" />, // NodeJS
-  <TbSql className="w-12 h-12 text-[#003B57]" />, // SQL
-];
+  <TbSql className="w-12 h-12 text-[#003B57]" /> // SQL
+]
 export const Accueil = ({}: Props) => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0)
 
   const slide = useCallback(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % projects.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    setIndex((prev) => (prev + 1) % projects.length)
+  }, [])
 
-  const current = projects[index % projects.length];
-  const next = projects[(index + 1) % projects.length];
+  useEffect(() => {
+    const interval = setInterval(slide, 5000) // Change de carte toutes les 5s
+    return () => clearInterval(interval) // Nettoyage à chaque démontage ou re-render
+  }, [slide])
+
+  const current = projects[index]
+  const next = projects[(index + 1) % projects.length]
+
   return (
-    <section className="w-full h-fit flex flex-col md:grid md:grid-rows-6 md:auto-rows-[62px] gap-3 z-50">
-      <div className="md:row-span-4 flex flex-col md:flex-row gap-12 md:h-[362px]">
+    <section className="w-full h-fit flex flex-col gap-12 md:gap-6 z-50 md:h-full">
+      <div className="flex flex-col min-h-[365px] gap-12 md:flex-row ">
         <LeftSide />
         <AnimatedCards current={current} next={next} />
-      </div>{" "}
-      <div className="md:row-span-4 md:grid md:grid-cols-6 w-full h-full">
-        {/* Deuxième div - un peu plus petite */}
-        <section className="col-span-2 p-4 glassomorph_effect h-full w-full">
-          <h3 className="tracking-wider text-2xl font-bold light-black mb-2">
-            Arsenal{" "}
-          </h3>{" "}
-          {/* <div className=" w-full h-full "> */}
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper px-5 md:px-12 min-h-[240px] w-[250px] h-[260px]"
-            style={{ height: "calc(100% - 10%)" }}
-          >
-            {arsenal.map((tech, index) => (
-              <SwiperSlide key={index} className="w-full min-h-full">
-                {tech}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* </div> */}
-        </section>
+      </div>
+      <BottomSection />
+    </section>
+  )
+}
+
+const BottomSection = () => {
+  return (
+    <section className="w-full lg:h-[40%] border-2 ">
+      {/* Carousel Container */}
+      <div className="glassomorph_effect_bis max-w-[250px] p-4 border-2 border-amber-400 lg:h-full">
+        {/* TItle */}
+        <h3 className="tracking-wider text-2xl font-bold light-black mb-2">Arsenal </h3>{' '}
+        {/* Carousel */}
+        <Swiper
+          effect={'cards'}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className="mySwiper px-5 md:px-12 h-[260px] md:h-[200px]"
+        >
+          {arsenal.map((tech, index) => (
+            <SwiperSlide key={index} className="w-48 max-w-[95%]  ">
+              {tech}
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
-  );
-};
+  )
+}

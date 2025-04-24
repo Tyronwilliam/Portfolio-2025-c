@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Tyron from "../../../../public/images/monster-hunter.png";
-import TyronArcane from "../../../../public/images/arcane-2.png";
+import Image from 'next/image'
+import Tyron from '../../../../public/images/monster-hunter.png'
+import TyronArcane from '../../../../public/images/arcane-2.png'
 
 export const LeftSide = () => {
   return (
-    <div className="glassomorph_effect w-full h-fit md:h-full md:w-1/2  flex flex-col md:flex-row md:overflow-hidden gap-1 grow">
+    <div className="glassomorph_effect_bis w-full h-fit flex flex-col md:flex-row  gap-1 grow">
       <MockUpTyron />
       <IntroText />
     </div>
-  );
-};
+  )
+}
 const MockUpTyron = () => {
   return (
-    <div className="relative hidden md:block h-full md:basis-1/2 w-[35%]">
+    <div className="relative hidden lg:block h-full md:basis-1/2 w-[35%]">
       <Image
         src={TyronArcane}
         alt="myself in a combat suit style monster hunter"
@@ -20,14 +20,12 @@ const MockUpTyron = () => {
         className="object-contain"
       />
     </div>
-  );
-};
+  )
+}
 const IntroText = () => {
   return (
     <div className="md:grow rounded-xl p-4 flex flex-col gap-4 justify-center">
-      <h2 className="tracking-wider text-2xl font-bold light-black">
-        Let's work Together
-      </h2>
+      <h2 className="tracking-wider text-2xl font-bold light-black">Let's work Together</h2>
       <div className=" mb-3 ">
         <p className="text-xl tracking-wide light-black">
           Enjoy working with high quality developer.
@@ -40,5 +38,5 @@ const IntroText = () => {
         Contact
       </button>
     </div>
-  );
-};
+  )
+}

@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background: #0a0a0a;
   --foreground: #ededed;
 }
@@ -22,7 +22,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+body {
+  display: flex;
+}
 /* :where(:root) {
   background: radial-gradient(ellipse, hsl(220 15% 86%) 10%, hsl(220 15% 90%));
   background-repeat: no-repeat;
@@ -96,6 +98,8 @@ body {
 }
 
 .swiper-slide {
+  /* height: 100%; */
+  /* min-height: 260px; */
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -112,12 +116,7 @@ body {
 
 /* Couleurs pastel douces */
 .swiper-slide:nth-child(1n) {
-  background-color: hsl(
-    198,
-    100%,
-    89%,
-    0.3
-  ); /* pastel bleu clair pour Tailwind */
+  background-color: hsl(198, 100%, 89%, 0.3); /* pastel bleu clair pour Tailwind */
   display: flex;
   align-items: center;
   justify-content: center;

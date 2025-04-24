@@ -1,16 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { ProjectItem } from "./Accueil";
-import Image from "next/image";
+import { AnimatePresence, motion } from 'framer-motion'
+import { ProjectItem } from './Accueil'
+import Image from 'next/image'
+import Fallback from '../../../../public/herbe.jpg'
+import { useState } from 'react'
+export function AnimatedCards({ current, next }: { current: ProjectItem; next: any }) {
+  const [imageError, setImageError] = useState(false)
 
-export function AnimatedCards({
-  current,
-  next,
-}: {
-  current: ProjectItem;
-  next: any;
-}) {
   return (
-    <div className="relative w-full md:w-[220px] min-h-[369px] md:h-full md:overflow-hidden flex flex-col justify-between items-end grow">
+    <div className="relative w-full h-full flex flex-col justify-between min-h-[365px] md:items-end">
       <AnimatePresence initial={false}>
         {/* INDEX 0 */}
         <motion.div
@@ -22,26 +19,24 @@ export function AnimatedCards({
           exit={{
             x: 300, // Exit vers la droite
             opacity: 0,
-            transition: { duration: 0.5 },
+            transition: { duration: 0.5 }
           }}
           transition={{
-            type: "spring",
+            type: 'spring',
             stiffness: 100,
-            damping: 20,
+            damping: 20
           }}
         >
-          {" "}
           <div className="w-[123px] h-[123px] rounded-md shrink-0">
             <Image
               src={current.img}
               alt="image site"
               className="rounded-md w-full h-full object-cover"
+              onError={() => setImageError(true)}
             />
           </div>
           <div className="flex flex-col justify-between w-full">
-            <h3 className="text-sm md:text-lg font-bold light-black ">
-              {current.name}
-            </h3>
+            <h3 className="text-sm md:text-lg font-bold light-black ">{current.name}</h3>
             <div>
               <p className="text-xs light-black">{current.description}</p>
               <div className="yellow-bg p-0.5 w-[32px] text-center h-fit text-[9px] rounded-sm text-white mt-1">
@@ -57,31 +52,29 @@ export function AnimatedCards({
           layoutId={next.name}
           key={next.name}
           className="absolute h-[168px] w-full flex justify-between rounded-3xl gap-5 glassomorph_effect_bis px-2 py-4  md:py-5.5 md:px-8"
-          initial={{ x: 300, y: "115%", opacity: 0 }}
-          animate={{ x: 0, y: "115%", opacity: 1 }}
+          initial={{ x: 300, y: '115%', opacity: 0 }}
+          animate={{ x: 0, y: '115%', opacity: 1 }}
           exit={{
             x: 0,
-            y: "-115%",
+            y: '-115%',
             opacity: 0,
-            transition: { duration: 1 },
+            transition: { duration: 1 }
           }}
           transition={{
-            type: "spring",
+            type: 'spring',
             stiffness: 120,
-            damping: 20,
+            damping: 20
           }}
         >
           <div className="w-[123px] h-[123px] rounded-md shrink-0">
             <Image
-              src={next.img}
+              src={imageError ? Fallback : next.img}
               alt="image site"
               className="rounded-md w-full h-full object-cover"
             />
           </div>
           <div className="flex flex-col justify-between w-full">
-            <h3 className="text-sm md:text-lg font-bold light-black ">
-              {next.name}
-            </h3>
+            <h3 className="text-sm md:text-lg font-bold light-black ">{next.name}</h3>
             <div>
               <p className="text-xs light-black">{next.description}</p>
               <div className="yellow-bg p-0.5 w-[32px] text-center h-fit text-[9px] rounded-sm text-white mt-1">
@@ -93,5 +86,5 @@ export function AnimatedCards({
         </motion.div>
       </AnimatePresence>
     </div>
-  );
+  )
 }
