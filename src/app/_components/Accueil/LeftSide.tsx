@@ -1,42 +1,42 @@
-import Image from 'next/image'
-import Tyron from '../../../../public/images/monster-hunter.png'
-import TyronArcane from '../../../../public/images/arcane-2.png'
+import Image from "next/image";
+import Tyron from "../../../../public/images/3dnobg.png";
+import TyronArcane from "../../../../public/images/arcane-2.png";
 
 export const LeftSide = () => {
   return (
-    <div className="glassomorph_effect_bis w-full h-fit flex flex-col md:flex-row  gap-1 grow">
+    <div className="glassomorph_effect_bis w-full h-full xl:flex flex-row gap-1 xl:h-full xl:grow">
       <MockUpTyron />
       <IntroText />
     </div>
-  )
-}
+  );
+};
 const MockUpTyron = () => {
   return (
-    <div className="relative hidden lg:block h-full md:basis-1/2 w-[35%]">
+    <div className="xl:relative hidden xl:block xl:h-full xl:w-[35%]">
       <Image
-        src={TyronArcane}
+        src={Tyron}
         alt="myself in a combat suit style monster hunter"
         fill
-        className="object-contain"
+        className="object-contain hidden lg:block w-full h-full absolute top-0 left-0"
       />
     </div>
-  )
-}
+  );
+};
 const IntroText = () => {
   return (
-    <div className="md:grow rounded-xl p-4 flex flex-col gap-4 justify-center">
-      <h2 className="tracking-wider text-2xl font-bold light-black">Let's work Together</h2>
+    <div className="h-full rounded-xl p-4 flex flex-col gap-4 justify-center">
+      <h2 className="tracking-wider text-2xl font-bold">Let's work Together</h2>
       <div className=" mb-3 ">
-        <p className="text-xl tracking-wide light-black">
+        <p className="text-xl tracking-wide">
           Enjoy working with high quality developer.
         </p>
-        <span className="text-xs font-light light-black tracking-wide	">
+        <span className="text-xs font-light tracking-wide	">
           Developpeur frontend - Paris
         </span>
       </div>
-      <button className="bg-blue-500 w-full max-w-[186px] p-4 rounded-xl text-xl text-white custom_shadow-button cursor-pointer">
+      <button className="bg-blue-900 w-full max-w-[186px] p-4 rounded-xl text-xl text-white custom_shadow-button cursor-pointer">
         Contact
       </button>
     </div>
-  )
-}
+  );
+};
