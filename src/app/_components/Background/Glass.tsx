@@ -3,7 +3,7 @@ type Props = {
 };
 export const Glass = ({ children }: Props) => {
   return (
-    <div className="w-full relative lg:max-h-[99.9%]  mx-auto z-50 flex flex-col p-6 glass lg:p-5 items-center justify-center max-w-[1300px] ">
+    <div className="w-full relative lg:max-h-[99.9%] mx-auto z-50 flex flex-col p-6 md:p-4 glass lg:p-5 items-center justify-center max-w-[1300px] ">
       {children}
     </div>
   );

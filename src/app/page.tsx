@@ -15,8 +15,8 @@ export default function Home() {
       <Glass>
         <section
           className={cn(
-            "w-full relative flex flex-col gap-3 mx-auto z-50 md:px-3 md:overflow-hidden md:h-full",
-            selectedTab === NavigationLabel.APropos ? "xl:gap-0" : "xl:gap-10"
+            "w-full relative flex flex-col gap-3 mx-auto z-50  md:overflow-hidden md:h-full",
+            selectedTab === NavigationLabel.APropos ? "xl:gap-5" : "xl:gap-10"
           )}
         >
           <Navigation

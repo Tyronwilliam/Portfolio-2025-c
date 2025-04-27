@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Inter, Poppins } from "next/font/google";
+import {
+  Geist,
+  Inter,
+  Montserrat,
+  Poppins,
+  Roboto,
+  Roboto_Condensed,
+} from "next/font/google";
 import "./globals.css";
 import NavigationProvider from "./hooks/useNavigation";
 
@@ -7,6 +14,24 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"], // ← choisis les poids que tu veux charger
   variable: "--font-poppins", // ← pour utiliser une variable CSS
+  display: "swap", // ← bonne pratique pour éviter les flashs
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // ← choisis les poids que tu veux charger
+  variable: "--font-montserrat", // ← pour utiliser une variable CSS
+  display: "swap", // ← bonne pratique pour éviter les flashs
+});
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // ← choisis les poids que tu veux charger
+  variable: "--font-robotoCondensed", // ← pour utiliser une variable CSS
+  display: "swap", // ← bonne pratique pour éviter les flashs
+});
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // ← choisis les poids que tu veux charger
+  variable: "--font-roboto", // ← pour utiliser une variable CSS
   display: "swap", // ← bonne pratique pour éviter les flashs
 });
 const inter = Inter({
@@ -27,7 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={` ${poppins.variable} antialiased`}>
+      <body
+        className={` ${poppins.variable} ${robotoCondensed.variable} ${roboto.variable} ${montserrat.variable} antialiased`}
+      >
         <NavigationProvider>{children}</NavigationProvider>
       </body>
     </html>

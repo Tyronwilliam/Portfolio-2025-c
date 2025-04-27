@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --font-sans: var(--font-poppins);
+  --font-robotoCondensed: var(--font-robotoCondensed);
+  --font-roboto: var(--font-roboto);
+  --font-montserrat: var(--font-montserrat);
   --font-mono: var(--font-mono);
 }
 :root {
@@ -18,7 +21,7 @@ body {
   width: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-poppins);
   transition:
     background 0.3s,
     color 0.3s;
@@ -77,7 +80,43 @@ button {
 .yellow-bg {
   background: #f2c655;
 }
-
+.glassomorph_effect_card_1 {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+}
+.glassomorph_effect_card_1:hover {
+  background: hsla(201, 89%, 28%, 0.2);
+}
+.glassomorph_effect_card_2 {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+}
+.glassomorph_effect_card_2:hover {
+  background: rgb(90, 103, 90, 0.2);
+}
+.glassomorph_effect_card_3 {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-robotoCondensed);
+}
+.glassomorph_effect_card_3:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 .custom_shadow-button {
   filter: drop-shadow(0px 20px 50px rgba(54, 233, 114, 0.6));
   box-shadow:
@@ -93,7 +132,29 @@ button {
   color: black; /* Texte noir */
   box-shadow: none; /* Suppression du box-shadow au survol */
 }
+.scroll-container::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
 
+/* Apparence de la partie de la barre de défilement qui bouge */
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* Couleur semi-transparente */
+  border-radius: 10px;
+  backdrop-filter: blur(
+    5px
+  ); /* Applique un flou sur le thumb de la barre de défilement */
+}
+
+/* Apparence de la piste de la barre de défilement */
+.scroll-container::-webkit-scrollbar-track {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Fond sombre derrière la barre de défilement */
+  border-radius: 10px;
+}
 .swiper-slide {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);

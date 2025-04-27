@@ -21,9 +21,12 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-poppins)", "sans-serif"],
+        Poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
+        Montserrat: ["var(--font-montserrat)", "sans-serif"],
+        RobotoCondensed: ["var(--font-robotoCondensed)", "sans-serif"],
+        Roboto: ["var(--font-roboto)", "sans-serif"],
       },
     },
   },
