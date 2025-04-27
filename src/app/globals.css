@@ -1,10 +1,11 @@
 @import "tailwindcss";
+
 @theme inline {
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-mono);
 }
 :root {
-  --background: #040348;
+  --background: #000000;
   --foreground: #171717;
 }
 
@@ -23,14 +24,17 @@ body {
     color 0.3s;
   margin: 0;
   padding: 0;
-  background-image: url("../../public/images/animated.png");
+  /* background-image: url("../../public/images/animated.png");
   background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 body {
   display: flex;
 }
-
+button {
+  background-color: var(--color-blue-900);
+  cursor: pointer;
+}
 .glass {
   background: rgb(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -46,6 +50,13 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+}
+.glassomorph_effect_no_radius {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease-in-out;
 }
@@ -75,12 +86,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.027);
   transition: all 0.4s ease;
 }
-.custom_shadow-button:hover {
+
+.custom_shadow-button:hover:not(:disabled) {
   border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure plus épaisse avec couleur */
   background-color: #0a0a0a00; /* Fond transparent */
   color: black; /* Texte noir */
   box-shadow: none; /* Suppression du box-shadow au survol */
 }
+
 .swiper-slide {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -195,7 +208,7 @@ body {
   top: 10%;
   left: 0%;
   transition: all ease-in-out 1s;
-  transform: translateX(-150%);
+  transform: translateX(-250%);
   /* Vous pouvez aussi ajuster l’alignement et les marges selon vos besoins */
 }
 

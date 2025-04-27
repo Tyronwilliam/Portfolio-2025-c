@@ -34,7 +34,7 @@ const IntroText = () => {
           Developpeur frontend - Paris
         </span>
       </div>
-      <button className="bg-blue-900 w-full max-w-[186px] p-4 rounded-xl text-xl text-white custom_shadow-button cursor-pointer">
+      <button className="w-full max-w-[186px] p-4 rounded-xl text-xl text-white custom_shadow-button cursor-pointer">
         Contact
       </button>
     </div>

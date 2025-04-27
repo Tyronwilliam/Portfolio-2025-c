@@ -24,7 +24,7 @@ export default function NavigationProvider({
   children: React.ReactNode;
 }) {
   const [selectedTab, setSelectedTab] = React.useState<NavigationLabel>(
-    NavigationLabel.Accueil
+    NavigationLabel.Projets
   );
 
   const handleSelectedTab = (arg: NavigationLabel) => {

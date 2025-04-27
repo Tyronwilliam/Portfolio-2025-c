@@ -1,7 +1,7 @@
 import { NavigationLabel } from "@/app/hooks/useNavigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Forest from "../../../../public/images/japon2.png";
 
 export const BackgroundImg = ({
@@ -11,16 +11,31 @@ export const BackgroundImg = ({
   isVideo: boolean;
   selectedTab: NavigationLabel;
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isLoading, setIsLoading] = React.useState(true); // Ajout d'un état pour gérer le chargement
 
+  const videoRef = useRef<HTMLVideoElement>(null);
   const videoSrc =
     selectedTab === NavigationLabel.Accueil
       ? "/videos/animated.mp4"
-      : "/videos/animated2.mp4";
+      : selectedTab === NavigationLabel.APropos
+        ? "/videos/animated2.mp4"
+        : selectedTab === NavigationLabel.Projets
+          ? "/videos/animated3.mp4"
+          : "/videos/animated.mp4"; // You can return null or a default video if none of the conditions match
+
   const posterImage =
     selectedTab === NavigationLabel.Accueil
       ? "/images/animated.png"
-      : "/images/animated2.png";
+      : selectedTab === NavigationLabel.APropos
+        ? "/images/animated2.png"
+        : selectedTab === NavigationLabel.Projets
+          ? "/images/animated3.png"
+          : "/images/animated.png";
+  const handleVideoLoad = () => {
+    setIsLoading(false); // Une fois la vidéo chargée, on cache l'image
+  };
+
+  console.log(posterImage, "POSTER");
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
@@ -35,6 +50,7 @@ export const BackgroundImg = ({
         muted
         playsInline
         id="background-video"
+        onCanPlayThrough={handleVideoLoad} // Quand la vidéo peut être lue, on cache l'image
         poster={posterImage}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,6 +65,7 @@ export const BackgroundImg = ({
           objectFit: "cover",
           zIndex: 0,
         }}
+        ref={videoRef}
       >
         <source src={videoSrc} type="video/mp4" />
         Votre navigateur ne supporte pas les vidéos HTML5.

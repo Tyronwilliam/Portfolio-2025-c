@@ -18,8 +18,11 @@ export const Navigation = ({
           {Object.values(NavigationLabel)?.map((item) => (
             <li
               className={clsx(
-                "relative text-sm text-stone-300 cursor-pointer",
-                item === selectedTab ? "font-bold" : "font-medium"
+                "relative text-sm cursor-pointer",
+                item === selectedTab ? "font-bold" : "font-medium",
+                selectedTab === NavigationLabel.APropos
+                  ? "text-black"
+                  : " text-stone-300 "
               )}
               key={item}
               onClick={() => handleSelectedTab(item)}
