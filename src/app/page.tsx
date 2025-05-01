@@ -11,7 +11,7 @@ import { NavigationContext, NavigationLabel } from "./hooks/useNavigation";
 export default function Home() {
   const { handleSelectedTab, selectedTab } = useContext(NavigationContext);
   return (
-    <section className="relative w-full md:h-screen md:overflow-hidden  flex flex-col md:items-center grow md:justify-center p-5 md:p-10">
+    <section className="relative w-full flex flex-col grow p-5 md:h-screen md:overflow-hidden  md:items-center  md:justify-center  md:p-10">
       <Glass>
         <section
           className={cn(

@@ -1,11 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class", '[data-theme="dark"]'], // supporte class et data-theme
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         ...require("tailwindcss/colors"),
         blue: {
           50: "#ebf2fd",

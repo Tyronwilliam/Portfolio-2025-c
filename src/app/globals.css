@@ -1,35 +1,24 @@
 @import "tailwindcss";
-
+@import url("./animation.css");
 @theme {
+  --animate-fadeIn: fadeIn 2s ease-in-out forwards;
+  --animate-shrinkHeight: shrinkHeight 2s ease-in-out forwards;
   --font-sans: var(--font-poppins);
   --font-robotoCondensed: var(--font-robotoCondensed);
   --font-roboto: var(--font-roboto);
   --font-montserrat: var(--font-montserrat);
   --font-mono: var(--font-mono);
 }
-:root {
-  --background: #000000;
-  --foreground: #171717;
-}
-
-[data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
 html,
 body {
   width: 100%;
-  background: var(--background);
-  color: var(--foreground);
+  background: black;
   font-family: var(--font-poppins);
   transition:
     background 0.3s,
     color 0.3s;
   margin: 0;
   padding: 0;
-  /* background-image: url("../../public/images/animated.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat; */
 }
 body {
   display: flex;
@@ -52,9 +41,9 @@ button {
   box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease-in-out;
+  border-radius: 20px;
 }
 .glassomorph_effect_no_radius {
   background: rgba(255, 255, 255, 0.2);
@@ -63,7 +52,13 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease-in-out;
 }
-
+.glassomorph_effect_agence {
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+}
 .glassomorph_effect {
   background: linear-gradient(
     135deg,
@@ -127,32 +122,23 @@ button {
 }
 
 .custom_shadow-button:hover:not(:disabled) {
-  border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure plus épaisse avec couleur */
-  background-color: #0a0a0a00; /* Fond transparent */
-  color: black; /* Texte noir */
-  box-shadow: none; /* Suppression du box-shadow au survol */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: #0a0a0a00;
+  color: black;
+  box-shadow: none;
 }
 .scroll-container::-webkit-scrollbar {
-  width: 8px; /* Largeur de la barre de défilement */
+  width: 8px;
 }
 
-/* Apparence de la partie de la barre de défilement qui bouge */
 .scroll-container::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3); /* Couleur semi-transparente */
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  backdrop-filter: blur(
-    5px
-  ); /* Applique un flou sur le thumb de la barre de défilement */
+  backdrop-filter: blur(5px);
 }
 
-/* Apparence de la piste de la barre de défilement */
 .scroll-container::-webkit-scrollbar-track {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.1
-  ); /* Fond sombre derrière la barre de défilement */
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 .swiper-slide {
@@ -248,20 +234,11 @@ button {
     transform: translateY(100%, 0);
     opacity: 1;
   }
-  /* 40% {
-    transform: rotate(-20deg) scale(0.98) translate(-30px, 20px);
-    opacity: 0.9;
-  }
-  70% {
-    transform: rotate(-35deg) scale(0.95) translate(-80px, 100px);
-    opacity: 0.5;
-  } */
   100% {
     transform: scale(0.7) ranslateY(100%);
     opacity: 0;
   }
 }
-/* Classe exit-animation */
 .exit-animation {
   position: absolute;
   width: 99%;
@@ -270,13 +247,10 @@ button {
   left: 0%;
   transition: all ease-in-out 1s;
   transform: translateX(-250%);
-  /* Vous pouvez aussi ajuster l’alignement et les marges selon vos besoins */
 }
 
 .enter-animation {
   position: relative;
   transform: translateX(0%);
   transition: all ease-in-out 1s;
-
-  /* Vous pouvez aussi ajuster l’alignement et les marges selon vos besoins */
 }
