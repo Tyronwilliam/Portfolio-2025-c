@@ -1,0 +1,124 @@
+.container_title {
+  position: relative;
+  width: 100%;
+  top: -5%;
+  left: 0;
+  color: #e9b535;
+  padding: 10px;
+  text-align: center;
+  z-index: 100;
+}
+.container_title > h1:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #e9b535;
+}
+.container_title > h1:nth-child(2) {
+  color: #e9b535;
+  animation: BeerAnimation 4s ease-in-out infinite;
+}
+.title {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%);
+  letter-spacing: 2px;
+  z-index: 100;
+}
+.glassomorph_effect_coop {
+  background: rgb(233, 181, 53, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+}
+.glassomorph_effect_card_csb {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+}
+.glassomorph_effect_card_csb:hover {
+  background: hsla(201, 89%, 28%, 0.2);
+}
+.glassomorph_effect_card_coop {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+}
+.glassomorph_effect_card_coop:hover {
+  background: rgb(90, 103, 90, 0.2);
+}
+.light_blue_bg_csb {
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+  background: rgba(47, 152, 233, 1);
+}
+.glassomorph_effect_card_agence {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+  font-family: var(--font-robotoCondensed);
+}
+.glassomorph_effect_card_agence:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes BeerAnimation {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+@media screen and (min-width: 768px) {
+  .title {
+    letter-spacing: 6px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .beatuy_radius-right {
+    border-radius: 21% 79% 70% 30% / 25% 42% 58% 75%;
+  }
+  .beatuy_radius-left {
+    border-radius: 72% 28% 60% 40% / 30% 60% 40% 70%;
+  }
+  .title {
+    letter-spacing: 7px;
+  }
+}

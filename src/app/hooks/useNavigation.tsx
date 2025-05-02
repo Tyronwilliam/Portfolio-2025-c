@@ -13,10 +13,21 @@ export enum NavigationLabel {
 export const NavigationContext = createContext<{
   handleSelectedTab: (arg: NavigationLabel) => void;
   selectedTab: NavigationLabel;
+  previousTab: NavigationLabel | null;
 }>({
   handleSelectedTab: () => {},
   selectedTab: NavigationLabel.Accueil,
+  previousTab: null,
 });
+export const tabOrder: NavigationLabel[] = [
+  NavigationLabel.Accueil,
+  NavigationLabel.APropos,
+  NavigationLabel.Projets,
+  NavigationLabel.Parcours,
+  NavigationLabel.Curriculum,
+  NavigationLabel.Hobbies,
+  NavigationLabel.FunFact,
+];
 
 export default function NavigationProvider({
   children,
@@ -26,13 +37,19 @@ export default function NavigationProvider({
   const [selectedTab, setSelectedTab] = React.useState<NavigationLabel>(
     NavigationLabel.Projets
   );
+  const [previousTab, setPreviousTab] = React.useState<NavigationLabel | null>(
+    null
+  );
 
   const handleSelectedTab = (arg: NavigationLabel) => {
+    setPreviousTab(selectedTab);
     setSelectedTab(arg);
   };
 
   return (
-    <NavigationContext.Provider value={{ handleSelectedTab, selectedTab }}>
+    <NavigationContext.Provider
+      value={{ handleSelectedTab, selectedTab, previousTab }}
+    >
       {children}
     </NavigationContext.Provider>
   );

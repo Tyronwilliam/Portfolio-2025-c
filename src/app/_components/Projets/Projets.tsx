@@ -9,13 +9,19 @@ export type ProjectUnion = keyof typeof detailProject;
 
 export const Projets = ({}: Props) => {
   const [currentProject, setCurrentProject] =
-    React.useState<ProjectUnion | null>("agence");
+    React.useState<ProjectUnion | null>(null);
 
   return (
-    <section className="w-full md:h-[759px] flex flex-col items-center justify-center gap-10 md:gap-0 lg:p-4 lg:pt-0 grow">
-      <div className="flex gap-4 w-full items-center justify-center">
-        {currentProject === null &&
-          projetsCardData.map((projet, index) => (
+    // <section className="w-full h-full flex flex-col items-center justify-center gap-10 md:gap-0 lg:p-4 lg:pt-0">
+    <>
+      {currentProject === null && (
+        <div
+          className={cn(
+            "flex flex-col md:flex-row gap-4 w-full h-full items-center justify-center",
+            currentProject === null && ""
+          )}
+        >
+          {projetsCardData.map((projet, index) => (
             <Card
               key={index}
               title={projet.title}
@@ -23,14 +29,19 @@ export const Projets = ({}: Props) => {
               mainClass={projet.mainClass}
               subClass={projet.subClass}
               union={projet?.union}
+              delay={projet?.delay}
               setCurrentProject={setCurrentProject}
             />
           ))}
-      </div>
-      {currentProject === "agence" && (
-        <DetailProject currentProject={currentProject} />
+        </div>
       )}
-    </section>
+      {currentProject !== null && (
+        <DetailProject
+          currentProject={currentProject}
+          backTo={setCurrentProject}
+        />
+      )}
+    </>
   );
 };
 interface CardProps extends ProjectCard {
@@ -43,13 +54,15 @@ const Card = ({
   subClass,
   union,
   setCurrentProject,
+  delay,
 }: CardProps) => {
   return (
     <div
       className={cn(
-        "group cursor-pointer flex flex-col items-center justify-center gap-4 w-[25%] h-[350px]",
+        "group cursor-pointer flex flex-col items-center justify-center gap-4 w-full max-w-[350px] md:w-[33.33%] h-[300px] text-center",
         mainClass
       )}
+      style={{ animationDelay: `${delay}s` }}
       onClick={() => {
         // console.log(union, "UNION");
         setCurrentProject(union);

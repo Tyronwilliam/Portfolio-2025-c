@@ -4,6 +4,8 @@ import {
   Inter,
   Montserrat,
   Poppins,
+  PT_Sans_Narrow,
+  Raleway,
   Roboto,
   Roboto_Condensed,
 } from "next/font/google";
@@ -34,10 +36,17 @@ const roboto = Roboto({
   variable: "--font-roboto", // ← pour utiliser une variable CSS
   display: "swap", // ← bonne pratique pour éviter les flashs
 });
-const inter = Inter({
+const ptSansNarrow = PT_Sans_Narrow({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-ptSansNarrow",
+  weight: ["400", "700"], // ← choisis les poids que tu veux charger
+});
+const raleway = Raleway({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-raleway",
+  weight: ["400", "700"], // ← choisis les poids que tu veux charger
 });
 
 export const metadata: Metadata = {
@@ -53,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={` ${poppins.variable} ${robotoCondensed.variable} ${roboto.variable} ${montserrat.variable} antialiased`}
+        className={` ${poppins.variable} ${raleway.variable}   ${ptSansNarrow.variable}  ${robotoCondensed.variable} ${roboto.variable} ${montserrat.variable} antialiased`}
       >
         <NavigationProvider>{children}</NavigationProvider>
       </body>

@@ -24,6 +24,8 @@ export default {
         Montserrat: ["var(--font-montserrat)", "sans-serif"],
         RobotoCondensed: ["var(--font-robotoCondensed)", "sans-serif"],
         Roboto: ["var(--font-roboto)", "sans-serif"],
+        PtSansNarrow: ["var(--font-ptSansNarrow)", "sans-serif"],
+        Raleway: ["var(--font-raleway)", "sans-serif"],
       },
     },
   },

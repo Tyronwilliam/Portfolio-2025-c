@@ -35,7 +35,6 @@ export const BackgroundImg = ({
     setIsLoading(false); // Une fois la vidéo chargée, on cache l'image
   };
 
-  console.log(posterImage, "POSTER");
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
@@ -56,15 +55,7 @@ export const BackgroundImg = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: 0,
-        }}
+        className="absolute top-0 left-0 w-full h-full md:h-screen object-cover z-0"
         ref={videoRef}
       >
         <source src={videoSrc} type="video/mp4" />

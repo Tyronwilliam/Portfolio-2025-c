@@ -64,21 +64,78 @@ const projects: ProjectItem[] = [
   },
 ];
 export const arsenal = [
-  <RiTailwindCssFill className="w-full h-full text-[#38BDF8]" />, // TailwindCSS
-  <FaHtml5 className="w-full h-full text-[#E34F26]" />, // HTML
-  <FaCss3Alt className="w-full h-full text-[#1572B6]" />, // CSS
-  <IoLogoJavascript className="w-full h-full text-[#F7DF1E]" />, // JavaScript
-  <SiTypescript className="w-full h-full text-[#3178C6]" />, // TypeScript
-  <FaSass className="w-full h-full text-[#CC6699]" />, // Sass
-  <RiNextjsFill className="w-full h-full text-white" />, // NextJS
-  <FaReact className="w-full h-full text-[#61DAFB]" />, // React
-  <FaVuejs className="w-full h-full text-[#42B883]" />, // VueJS
-  <FaGitAlt className="w-full h-full text-[#F05032]" />, // Git
-  <FaNodeJs className="w-full h-full text-[#339933]" />, // NodeJS
-  <TbSql className="w-full h-full text-[#003B57]" />, // SQL
-  <SiStrapi className="w-full h-full text-[#003B57]" />, // SQL
-  <SiOvh className="w-full h-full text-[#003B57]" />, // SQL
+  <RiTailwindCssFill
+    className="w-full h-full text-[#38BDF8]"
+    aria-label="Tailwind CSS"
+    title="Tailwind CSS"
+  />,
+  <FaHtml5
+    className="w-full h-full text-[#E34F26]"
+    aria-label="HTML5"
+    title="HTML5"
+  />,
+  <FaCss3Alt
+    className="w-full h-full text-[#1572B6]"
+    aria-label="CSS3"
+    title="CSS3"
+  />,
+  <IoLogoJavascript
+    className="w-full h-full text-[#F7DF1E]"
+    aria-label="JavaScript"
+    title="JavaScript"
+  />,
+  <SiTypescript
+    className="w-full h-full text-[#3178C6]"
+    aria-label="TypeScript"
+    title="TypeScript"
+  />,
+  <FaSass
+    className="w-full h-full text-[#CC6699]"
+    aria-label="Sass"
+    title="Sass"
+  />,
+  <RiNextjsFill
+    className="w-full h-full"
+    aria-label="Next.js"
+    title="Next.js"
+  />,
+  <FaReact
+    className="w-full h-full text-[#61DAFB]"
+    aria-label="React"
+    title="React"
+  />,
+  <FaVuejs
+    className="w-full h-full text-[#42B883]"
+    aria-label="Vue.js"
+    title="Vue.js"
+  />,
+  <FaGitAlt
+    className="w-full h-full text-[#F05032]"
+    aria-label="Git"
+    title="Git"
+  />,
+  <FaNodeJs
+    className="w-full h-full text-[#339933]"
+    aria-label="Node.js"
+    title="Node.js"
+  />,
+  <TbSql
+    className="w-full h-full text-[#003B57]"
+    aria-label="SQL"
+    title="SQL"
+  />,
+  <SiStrapi
+    className="w-full h-full text-[#003B57]"
+    aria-label="Strapi"
+    title="Strapi"
+  />,
+  <SiOvh
+    className="w-full h-full text-[#003B57]"
+    aria-label="OVH"
+    title="OVH"
+  />,
 ];
+
 export const Accueil = ({}: Props) => {
   const [index, setIndex] = useState(0);
 

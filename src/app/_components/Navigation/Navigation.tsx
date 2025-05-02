@@ -11,7 +11,7 @@ export const Navigation = ({
   handleSelectedTab: (arg: NavigationLabel) => void;
 }) => {
   return (
-    <header className="w-full hidden md:flex relative pb-2.5 lg:pb-5 z-50">
+    <header className="w-full hidden md:flex relative pb-2.5 lg:pb-5 z-50 shrink-0">
       <div className="absolute w-full h-1 rounded-md bottom-0 glassomorph_effect"></div>
       <nav className="w-full">
         <ul className="w-full flex justify-between  lg:gap-7 lg:px-12">
