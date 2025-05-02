@@ -36,7 +36,6 @@ body {
   display: flex;
 }
 button {
-  /* background-color: var(--color-blue-900); */
   cursor: pointer;
 }
 
@@ -60,20 +59,14 @@ button {
   box-shadow: none;
 }
 .scroll-container::-webkit-scrollbar {
-  /* width: 8px; */
   opacity: 0;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  /* background-color: rgba(255, 255, 255, 0.3); */
-  /* border-radius: 10px; */
-  /* backdrop-filter: blur(5px); */
   opacity: 0;
 }
 
 .scroll-container::-webkit-scrollbar-track {
-  /* background-color: rgba(0, 0, 0, 0.1); */
-  /* border-radius: 10px; */
   opacity: 0;
 }
 .swiper-slide {
@@ -135,43 +128,6 @@ button {
   background-color: rgba(204, 229, 255, 0.3);
 }
 
-.enter-from-left {
-  animation: slideFromLeft 0.7s ease-in-out forwards;
-}
-.enter-from-right {
-  animation: slideFromRight 0.7s ease-in-out forwards;
-}
-.enter-from-bottom {
-  animation: slideFromBottom 0.7s ease-in-out forwards;
-}
-
-@keyframes slideFromLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slideFromRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slideFromBottom {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-
 .exit-right-animation {
   position: absolute;
   width: 99%;
@@ -180,6 +136,7 @@ button {
   left: 0%;
   transition: all ease-in-out 1s;
   transform: translateX(-250%);
+  opacity: 0;
 }
 .exit-left-animation {
   position: absolute;
@@ -189,6 +146,7 @@ button {
   left: 0%;
   transition: all ease-in-out 1s;
   transform: translateX(250%);
+  opacity: 0;
 }
 .enter-animation {
   position: relative;
@@ -196,6 +154,7 @@ button {
   height: 100%;
   transform: translateX(0%);
   transition: all ease-in-out 1s;
+  opacity: 1;
 }
 
 .enter-top-animation {
@@ -204,6 +163,7 @@ button {
   height: 100%;
   transform: translateY(0%);
   transition: all ease-in-out 1s;
+  opacity: 1;
 }
 .exit-bottom-animation {
   position: absolute;
@@ -213,4 +173,5 @@ button {
   left: 0%;
   transition: all ease-in-out 1s;
   transform: translateY(250%);
+  opacity: 0;
 }

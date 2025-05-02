@@ -93,10 +93,10 @@ export const DetailProject = ({
           aria-label="back"
           onClick={() => backTo(null)}
           className={cn(
-            "p-3 rounded-sm transition-all",
+            "p-3 rounded-sm transition-all border-[1px]",
             isCoop &&
-              "border-[#e9b535] border hover:text-[#5a675a] hover:bg-[#e9b535]",
-            isAgence && "border-white border hover:bg-white hover:text-black",
+              "border-[#e9b535]  hover:text-[#5a675a] hover:bg-[#e9b535]",
+            isAgence && "border-white  hover:bg-white hover:text-black",
             isCsb &&
               "border-[#2f98e9] bg-[#2f98e9] text-white hover:text-[#085b89] hover:bg-white"
           )}

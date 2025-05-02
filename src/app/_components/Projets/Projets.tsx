@@ -12,7 +12,6 @@ export const Projets = ({}: Props) => {
     React.useState<ProjectUnion | null>(null);
 
   return (
-    // <section className="w-full h-full flex flex-col items-center justify-center gap-10 md:gap-0 lg:p-4 lg:pt-0">
     <>
       {currentProject === null && (
         <div
@@ -64,7 +63,6 @@ const Card = ({
       )}
       style={{ animationDelay: `${delay}s` }}
       onClick={() => {
-        // console.log(union, "UNION");
         setCurrentProject(union);
       }}
     >
