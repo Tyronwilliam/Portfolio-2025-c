@@ -35,7 +35,7 @@ export default function NavigationProvider({
   children: React.ReactNode;
 }) {
   const [selectedTab, setSelectedTab] = React.useState<NavigationLabel>(
-    NavigationLabel.Projets
+    NavigationLabel.Accueil
   );
   const [previousTab, setPreviousTab] = React.useState<NavigationLabel | null>(
     null

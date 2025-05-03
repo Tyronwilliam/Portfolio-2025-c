@@ -28,10 +28,11 @@ const IntroText = () => {
       <h2 className="tracking-wider text-2xl font-bold glassomorph_effect_no_radius">
         Let's work Together
       </h2>
+
       <div className=" mb-3 glassomorph_effect_no_radius ">
-        <p className="text-xl tracking-wide">
+        {/* <p className="text-xl tracking-wide">
           Enjoy working with high quality developer.
-        </p>
+        </p> */}
         <span className="text-xs font-light tracking-wide	">
           Developpeur frontend - Paris
         </span>

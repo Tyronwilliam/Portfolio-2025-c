@@ -21,7 +21,7 @@ export default function Home() {
       : "left";
   return (
     <section className="relative w-full h-full overflow-hidden   flex flex-col grow p-5 md:items-center  md:justify-center  md:p-10">
-      <Glass>
+      <Glass selectedTab={selectedTab}>
         <section
           className={cn(
             "relative w-full h-full flex flex-col gap-3 mx-auto z-50",

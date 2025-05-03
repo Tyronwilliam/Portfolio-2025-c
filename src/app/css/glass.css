@@ -6,6 +6,18 @@
   border-radius: 20px;
   border: 1px solid rgb(255, 255, 255, 0.2);
 }
+.glass_accueil {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* ultra léger, juste un soupçon de blanc */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* ombre légère et naturelle */
+  backdrop-filter: blur(0.8px); /* flou fort pour effet vitre */
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
 .glassomorph_effect_bis {
   background: rgba(255, 255, 255, 0.4);
@@ -33,6 +45,6 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   border: 1px solid rgba(255, 255, 255, 0.2);
 }

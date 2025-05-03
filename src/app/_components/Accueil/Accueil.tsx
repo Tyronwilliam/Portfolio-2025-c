@@ -135,32 +135,57 @@ export const arsenal = [
     title="OVH"
   />,
 ];
+const name = "Tyron William";
+const job = "Développeur Front-end";
 
 export const Accueil = ({}: Props) => {
-  const [index, setIndex] = useState(0);
-
-  const slide = useCallback(() => {
-    setIndex((prev) => (prev + 1) % projects.length);
-  }, [projects.length]);
-
-  useEffect(() => {
-    const interval = setInterval(slide, 5000);
-    return () => clearInterval(interval);
-  }, [slide]);
-
-  const current = projects[index];
-  const next = projects[(index + 1) % projects.length];
+  const [show, setShow] = useState<Boolean>(false);
 
   return (
-    <section className="w-full md:h-[759px] flex flex-col items-center justify-center gap-10 md:gap-0 lg:p-4 lg:pt-0 grow ">
-      {/* <section className="w-full h-full flex flex-col gap-12 md:gap-6 z-50  md:h-[759px] xl:gap-22"> */}
-      {/* <section className="flex flex-col min-h-[365px] grow gap-12 md:flex-row h-full"> */}
-      <LeftSide />
-      {/* <AnimatedCards current={current} next={next} /> */}
-      {/* </section> */}
-      {/* <section className="w-full lg:h-[40%] flex flex-row gap-12 md:gap-3 lg:gap-12">
-        <BottomSection />
-      </section> */}
+    <section className="w-full h-full relative flex-1 flex flex-col gap-10 md:gap-0 lg:p-4 lg:pt-0 grow ">
+      {/* <LeftSide /> */}
+      <div className="container_name">
+        <h1 className="name_title">
+          {[...name].map((letter, i) => (
+            <span
+              key={`outline-${i}`}
+              className={cn(show ? "show" : "hide")}
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {" "}
+              <div className="glassomorph_effect p-2 flex justify-center items-center">
+                {letter !== " " && letter}
+              </div>
+            </span>
+          ))}
+        </h1>
+      </div>
+      <div className="container_name">
+        <h1 className="name_title">
+          {[...job].map((letter, i) => (
+            <span
+              key={`outline-${i}`}
+              className={cn(show ? "show" : "hide")}
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {" "}
+              <div className="glassomorph_effect p-2 flex justify-center items-center">
+                {letter !== " " && letter}
+              </div>
+            </span>
+          ))}
+        </h1>
+      </div>
+
+      <div
+        onClick={() => {
+          setShow(!show);
+        }}
+        className="w-12 h-12 rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex justify-center items-center glassomorph_effect cursor-pointer z-50 "
+      >
+        <span className="absolute inline-flex h-1/2 w-1/2 animate-ping rounded-full bg-red-900 opacity-75"></span>
+        <span className="relative inline-flex  w-1/2 h-1/2  rounded-full bg-red-900"></span>
+      </div>
     </section>
   );
 };
