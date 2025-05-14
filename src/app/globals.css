@@ -1,7 +1,9 @@
-@import "tailwindcss";
-@import url("./css/animation.css");
-@import url("./css/project.css");
-@import url("./css/glass.css");
+@import 'tailwindcss';
+@import url('./css/animation.css');
+@import url('./css/project.css');
+@import url('./css/glass.css');
+@import url('./css/accueil.css');
+@import url('./css/swiper-custom.css');
 @theme {
   --animate-fadeIn: fadeIn 2s ease-in-out forwards;
   --animate-shrinkHeight: shrinkHeight 2s ease-in-out forwards;
@@ -24,6 +26,11 @@ body {
     color 0.3s;
   margin: 0;
   padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 @media screen and (min-width: 768px) {
   html,
@@ -68,64 +75,6 @@ button {
 
 .scroll-container::-webkit-scrollbar-track {
   opacity: 0;
-}
-.swiper-slide {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-.swiper-slide:nth-child(1n) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Couleurs pastel douces */
-.slide-index-1 {
-  background-color: hsl(198, 100%, 89%, 0.3);
-}
-.slide-index-2 {
-  background-color: rgba(255, 223, 186, 0.3);
-}
-
-.slide-index-3 {
-  background-color: rgba(255, 255, 186, 0.3);
-}
-
-.slide-index-4 {
-  background-color: rgba(186, 255, 201, 0.3);
-}
-
-.slide-index-5 {
-  background-color: rgba(186, 225, 255, 0.3);
-}
-
-.slide-index-6 {
-  background-color: rgba(218, 186, 255, 0.3);
-}
-
-.slide-index-7 {
-  background-color: rgba(255, 204, 229, 0.3);
-}
-
-.slide-index-8 {
-  background-color: rgba(204, 255, 229, 0.3);
-}
-
-.slide-index-9 {
-  background-color: rgba(229, 204, 255, 0.3);
-}
-
-.slide-index-10 {
-  background-color: rgba(204, 229, 255, 0.3);
 }
 
 .exit-right-animation {
@@ -174,52 +123,4 @@ button {
   transition: all ease-in-out 1s;
   transform: translateY(250%);
   opacity: 0;
-}
-.container_name {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  z-index: 100;
-  cursor: pointer;
-}
-
-.name_title {
-  font-size: 6rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.name_title span {
-  margin: 0 5px;
-  display: inline-block;
-  position: relative;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
-}
-
-/* Animations */
-.show {
-  animation: scaleOpacity 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-
-.hide {
-  opacity: 0;
-}
-
-@keyframes scaleOpacity {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
