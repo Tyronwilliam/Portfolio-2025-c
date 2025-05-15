@@ -26,6 +26,7 @@ export default {
         Roboto: ["var(--font-roboto)", "sans-serif"],
         PtSansNarrow: ["var(--font-ptSansNarrow)", "sans-serif"],
         Raleway: ["var(--font-raleway)", "sans-serif"],
+        Quattrocento: ["var(--font-quattrocento)", "sans-serif"],
       },
     },
   },

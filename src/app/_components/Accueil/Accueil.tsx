@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-import { ReactElement, useState } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
 import { BsBookmarkDashFill } from 'react-icons/bs'
 import { FaCss3Alt, FaGitAlt, FaHtml5, FaNodeJs, FaReact, FaSass, FaVuejs } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
@@ -79,11 +79,14 @@ export const arsenal = [
 const name = 'Tyron-William'
 
 const arraySquare = [['Tyron'], [''], ['William']]
-const profession = 'Développeur Front-end'
+const profession = 'Développeur Frontend'
 
 export const Accueil = ({}: Props) => {
   const [show, setShow] = useState<Boolean>(false)
 
+  useEffect(() => {
+    setShow(true)
+  }, [])
   return (
     <section className="w-full h-full relative flex-1 flex flex-col gap-10 md:gap-0 lg:p-4 lg:pt-0 grow ">
       {/* <LeftSide /> */}
@@ -121,7 +124,7 @@ export const Accueil = ({}: Props) => {
           ))}
         </h1>
       </div>
-      <div
+      {/* <div
         onClick={() => {
           setShow(!show)
         }}
@@ -132,7 +135,7 @@ export const Accueil = ({}: Props) => {
       >
         <span className="absolute inline-flex h-1/2 w-1/2 animate-ping rounded-full bg-red-900 opacity-75"></span>
         <span className="relative inline-flex  w-1/2 h-1/2  rounded-full bg-red-900"></span>
-      </div>
+      </div> */}
     </section>
   )
 }

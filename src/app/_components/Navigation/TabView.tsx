@@ -5,6 +5,8 @@ import { Projets } from '../Projets/Projets'
 import React from 'react'
 import { cn } from '../../../../lib/utils/classnames'
 import { Curriculum } from '../Curriculum/Curriculum'
+import Hobbies from '../Hobbies/Hobbies'
+import { FunFactGrid } from '../FunFact/FunFact'
 
 type Props = {
   selectedTab: NavigationLabel
@@ -33,17 +35,27 @@ export const TabViews = ({ selectedTab, direction }: Props) => {
         className={`${selectedTab !== NavigationLabel.Projets ? 'exit-bottom-animation' : 'enter-top-animation'}`}
       >
         <Projets />
-      </div>{' '}
+      </div>
+      <div
+        className={`${selectedTab !== NavigationLabel.Curriculum ? 'exit-bottom-animation' : 'enter-top-animation'}`}
+      >
+        <Curriculum />
+      </div>
       <div
         className={cn(
-          selectedTab === NavigationLabel.Curriculum
+          selectedTab === NavigationLabel.Hobbies
             ? 'enter-animation'
             : direction === 'right'
               ? 'exit-right-animation'
               : 'exit-left-animation'
         )}
       >
-        <Curriculum />
+        <Hobbies />
+      </div>
+      <div
+        className={`${selectedTab !== NavigationLabel.FunFact ? 'exit-bottom-animation' : 'enter-top-animation'}`}
+      >
+        <FunFactGrid />
       </div>
     </section>
   )

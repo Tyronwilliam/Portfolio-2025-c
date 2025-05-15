@@ -1,45 +1,43 @@
-import { NavigationLabel } from "@/app/hooks/useNavigation";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import React, { useEffect, useRef } from "react";
-import Forest from "../../../../public/images/japon2.png";
+import { NavigationLabel } from '@/app/hooks/useNavigation'
+import { AnimatePresence, motion } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
 
 export const BackgroundImg = ({
   isVideo,
-  selectedTab,
+  selectedTab
 }: {
-  isVideo: boolean;
-  selectedTab: NavigationLabel;
+  isVideo: boolean
+  selectedTab: NavigationLabel
 }) => {
-  const [isLoading, setIsLoading] = React.useState(true); // Ajout d'un état pour gérer le chargement
+  const [isLoading, setIsLoading] = React.useState(true) // Ajout d'un état pour gérer le chargement
 
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null)
   const videoSrc =
     selectedTab === NavigationLabel.Accueil
-      ? "/videos/animated.mp4"
+      ? '/videos/animated.mp4'
       : selectedTab === NavigationLabel.APropos
-        ? "/videos/animated2.mp4"
+        ? '/videos/animated2.mp4'
         : selectedTab === NavigationLabel.Projets
-          ? "/videos/animated3.mp4"
-          : "/videos/animated.mp4"; // You can return null or a default video if none of the conditions match
+          ? '/videos/animated3.mp4'
+          : '/videos/animated.mp4' // You can return null or a default video if none of the conditions match
 
   const posterImage =
     selectedTab === NavigationLabel.Accueil
-      ? "/images/animated.png"
+      ? '/images/animated.png'
       : selectedTab === NavigationLabel.APropos
-        ? "/images/animated2.png"
+        ? '/images/animated2.png'
         : selectedTab === NavigationLabel.Projets
-          ? "/images/animated3.png"
-          : "/images/animated.png";
+          ? '/images/animated3.png'
+          : '/images/animated.png'
   const handleVideoLoad = () => {
-    setIsLoading(false); // Une fois la vidéo chargée, on cache l'image
-  };
+    setIsLoading(false) // Une fois la vidéo chargée, on cache l'image
+  }
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.load();
+      videoRef.current.load()
     }
-  }, [videoSrc]);
+  }, [videoSrc])
   return isVideo ? (
     <AnimatePresence mode="wait">
       <motion.video
@@ -63,12 +61,14 @@ export const BackgroundImg = ({
       </motion.video>
     </AnimatePresence>
   ) : (
-    <Image
-      src={Forest}
-      alt="bg"
-      fill
-      quality={100}
-      className="object-cover object-center absolute w-full h-full z-0"
-    />
-  );
-};
+    <div></div>
+
+    // <Image
+    //   src={Forest}
+    //   alt="bg"
+    //   fill
+    //   quality={100}
+    //   className="object-cover object-center absolute w-full h-full z-0"
+    // />
+  )
+}
