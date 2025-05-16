@@ -1,13 +1,15 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { ProjectItem } from "./Accueil";
-export function AnimatedCards({
-  next,
-  current,
-}: {
-  current: ProjectItem;
-  next: ProjectItem;
-}) {
+import { AnimatePresence, motion } from 'framer-motion'
+import Image, { StaticImageData } from 'next/image'
+import { ReactElement } from 'react'
+
+export interface ProjectItem {
+  name: string
+  description: string
+  rating: string
+  icon: ReactElement
+  img: StaticImageData
+}
+export function AnimatedCards({ next, current }: { current: ProjectItem; next: ProjectItem }) {
   return (
     <div className="relative w-full max-w-[400px] flex flex-col justify-between min-h-[365px] md:items-end">
       <AnimatePresence initial={false}>
@@ -22,11 +24,11 @@ export function AnimatedCards({
             x: 300,
             y: 0,
             opacity: 0,
-            transition: { duration: 0.6 },
+            transition: { duration: 0.6 }
           }}
           transition={{
-            ease: "linear", // Transition fluide et constante
-            duration: 0.2, // Durée de l'animation
+            ease: 'linear', // Transition fluide et constante
+            duration: 0.2 // Durée de l'animation
           }}
         >
           <div className="w-[123px] h-[123px] rounded-md shrink-0">
@@ -59,12 +61,12 @@ export function AnimatedCards({
             x: 0,
             y: 0,
             opacity: 0,
-            transition: { duration: 0.1, ease: "linear" }, // Transition fluide, sans rebond
+            transition: { duration: 0.1, ease: 'linear' } // Transition fluide, sans rebond
           }}
           transition={{
-            type: "spring",
-            ease: "linear", // Transition fluide et constante
-            duration: 0.5, // Durée de l'animation
+            type: 'spring',
+            ease: 'linear', // Transition fluide et constante
+            duration: 0.5 // Durée de l'animation
           }}
         >
           <div className="w-[123px] h-[123px] rounded-md shrink-0">
@@ -87,5 +89,5 @@ export function AnimatedCards({
         </motion.div>
       </AnimatePresence>
     </div>
-  );
+  )
 }

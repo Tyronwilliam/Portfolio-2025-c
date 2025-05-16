@@ -15,7 +15,7 @@ export const BackgroundImg = ({
   const videoSrc =
     selectedTab === NavigationLabel.Accueil
       ? '/videos/animated.mp4'
-      : selectedTab === NavigationLabel.APropos
+      : selectedTab === NavigationLabel.APropos || selectedTab === NavigationLabel.Hobbies
         ? '/videos/animated2.mp4'
         : selectedTab === NavigationLabel.Projets
           ? '/videos/animated3.mp4'

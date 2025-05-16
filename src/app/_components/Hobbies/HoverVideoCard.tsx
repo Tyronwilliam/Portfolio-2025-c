@@ -52,7 +52,7 @@ export const HoverVideoCard = ({
       {/* Vidéo en hover */}
       <video
         ref={videoRef}
-        muted
+        muted={title === 'Piano' ? false : true}
         loop
         playsInline
         preload="auto"

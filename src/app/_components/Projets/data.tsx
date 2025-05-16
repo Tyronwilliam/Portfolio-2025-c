@@ -1,111 +1,130 @@
-import { ReactNode } from "react";
-import { arsenal } from "../Accueil/Accueil";
-import { CiBeerMugFull } from "react-icons/ci";
-import { BiHealth } from "react-icons/bi";
-import { BsCameraReelsFill } from "react-icons/bs";
-import { ProjectUnion } from "./Projets";
-import AGENCE from "../../../../public/images/agence.png";
-import COOP from "../../../../public/images/lacoop.png";
-import CSBImg from "../../../../public/images/csbimg.png";
-import { StaticImageData } from "next/image";
-
+import { ReactNode } from 'react'
+import { CiBeerMugFull } from 'react-icons/ci'
+import { BiHealth } from 'react-icons/bi'
+import { BsCameraReelsFill } from 'react-icons/bs'
+import { ProjectUnion } from './Projets'
+import AGENCE from '../../../../public/images/agence.png'
+import COOP from '../../../../public/images/lacoop.png'
+import CSBImg from '../../../../public/images/csbimg.png'
+import { StaticImageData } from 'next/image'
+import { FaCss3Alt, FaGitAlt, FaHtml5, FaNodeJs, FaReact, FaSass, FaVuejs } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
+import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
+import { SiOvh, SiStrapi, SiTypescript } from 'react-icons/si'
+import { TbSql } from 'react-icons/tb'
+export const arsenal = [
+  <RiTailwindCssFill
+    className="w-full h-full text-[#38BDF8]"
+    aria-label="Tailwind CSS"
+    title="Tailwind CSS"
+  />,
+  <FaHtml5 className="w-full h-full text-[#E34F26]" aria-label="HTML5" title="HTML5" />,
+  <FaCss3Alt className="w-full h-full text-[#1572B6]" aria-label="CSS3" title="CSS3" />,
+  <IoLogoJavascript
+    className="w-full h-full text-[#F7DF1E]"
+    aria-label="JavaScript"
+    title="JavaScript"
+  />,
+  <SiTypescript
+    className="w-full h-full text-[#3178C6]"
+    aria-label="TypeScript"
+    title="TypeScript"
+  />,
+  <FaSass className="w-full h-full text-[#CC6699]" aria-label="Sass" title="Sass" />,
+  <RiNextjsFill className="w-full h-full" aria-label="Next.js" title="Next.js" />,
+  <FaReact className="w-full h-full text-[#61DAFB]" aria-label="React" title="React" />,
+  <FaVuejs className="w-full h-full text-[#42B883]" aria-label="Vue.js" title="Vue.js" />,
+  <FaGitAlt className="w-full h-full text-[#F05032]" aria-label="Git" title="Git" />,
+  <FaNodeJs className="w-full h-full text-[#339933]" aria-label="Node.js" title="Node.js" />,
+  <TbSql className="w-full h-full text-[#003B57]" aria-label="SQL" title="SQL" />,
+  <SiStrapi className="w-full h-full text-[#003B57]" aria-label="Strapi" title="Strapi" />,
+  <SiOvh className="w-full h-full text-[#003B57]" aria-label="OVH" title="OVH" />
+]
 export interface ProjectCard {
-  title: string;
-  icon: ReactNode;
-  mainClass: string;
-  subClass: string;
-  union: ProjectUnion;
-  delay: number;
+  title: string
+  icon: ReactNode
+  mainClass: string
+  subClass: string
+  union: ProjectUnion
+  delay: number
 }
 export const projetsCardData: ProjectCard[] = [
   {
-    title: "LA COOP",
-    icon: (
-      <CiBeerMugFull className="w-20 h-20 text-black group-hover:text-[#e9b535]" />
-    ),
-    mainClass: "glassomorph_effect_card_coop opacity-0 animate-fadeUp",
-    subClass: "group-hover:text-[#e9b535] font-montserrat",
-    union: "coop",
-    delay: 0,
+    title: 'LA COOP',
+    icon: <CiBeerMugFull className="w-20 h-20 text-black group-hover:text-[#e9b535]" />,
+    mainClass: 'glassomorph_effect_card_coop opacity-0 animate-fadeUp',
+    subClass: 'group-hover:text-[#e9b535] font-montserrat',
+    union: 'coop',
+    delay: 0
   },
   {
-    title: "CSB Klinik",
+    title: 'CSB Klinik',
     icon: <BiHealth className="w-20 h-20 text-black group-hover:text-white" />,
-    mainClass:
-      "glassomorph_effect_card_csb bg-transparent opacity-0 animate-fadeUp",
-    subClass: "group-hover:text-white font-roboto",
-    union: "csb",
-    delay: 0.2,
+    mainClass: 'glassomorph_effect_card_csb bg-transparent opacity-0 animate-fadeUp',
+    subClass: 'group-hover:text-white font-roboto',
+    union: 'csb',
+    delay: 0.2
   },
   {
-    title: "Agence Graziani",
-    icon: (
-      <BsCameraReelsFill className="w-20 h-20 text-black group-hover:text-white" />
-    ),
+    title: 'Agence Graziani',
+    icon: <BsCameraReelsFill className="w-20 h-20 text-black group-hover:text-white" />,
     mainClass:
-      "glassomorph_effect_card_agence bg-transparent font-robotoCondensed opacity-0 animate-fadeUp",
-    subClass: "group-hover:text-white",
-    union: "agence",
-    delay: 0.4,
-  },
-];
+      'glassomorph_effect_card_agence bg-transparent font-robotoCondensed opacity-0 animate-fadeUp',
+    subClass: 'group-hover:text-white',
+    union: 'agence',
+    delay: 0.4
+  }
+]
 export interface ProjectDetail {
-  title: string;
-  clientRequest: string;
-  challenges: string[];
-  technologies: ReactNode[];
-  collaborators: string;
-  url: string;
-  photo: StaticImageData;
-  notes: string;
+  title: string
+  clientRequest: string
+  challenges: string[]
+  technologies: ReactNode[]
+  collaborators: string
+  url: string
+  photo: StaticImageData
+  notes: string
 }
 
 export type DetailProjectType = {
-  coop: ProjectDetail[];
-  csb: ProjectDetail[];
-  agence: ProjectDetail[];
-};
+  coop: ProjectDetail[]
+  csb: ProjectDetail[]
+  agence: ProjectDetail[]
+}
 export const detailProject: DetailProjectType = {
   coop: [
     {
-      title: "LACOOP",
+      title: 'LACOOP',
       clientRequest:
         "Créer un site vitrine pour un bar à leur image, avec leurs couleurs, ainsi qu'un back-office pour gérer les événements.",
       challenges: [
-        "Vulgarisation technique",
-        "Trouver leur identité visuelle",
+        'Vulgarisation technique',
+        'Trouver leur identité visuelle',
         "Architecture d'un back-office complet",
-        "Mise en ligne sur OVH",
+        'Mise en ligne sur OVH'
       ],
-      technologies: [
-        arsenal[1],
-        arsenal[0],
-        arsenal[7],
-        arsenal[12],
-        arsenal[9],
-        arsenal[13],
-      ],
-      collaborators: "Aucun",
-      url: "https://www.lacoopboissy.fr/",
+      technologies: [arsenal[1], arsenal[0], arsenal[7], arsenal[12], arsenal[9], arsenal[13]],
+      collaborators: 'Aucun',
+      url: 'https://www.lacoopboissy.fr/',
       photo: COOP,
       notes:
-        "Premier projet freelance très formateur. J'ai appris à vulgariser les concepts, suivre une méthodologie orientée composants, mettre en ligne un projet sur OVH et communiquer efficacement avec le client pour répondre à ses besoins.",
-    },
+        "Premier projet freelance très formateur. J'ai appris à vulgariser les concepts, suivre une méthodologie orientée composants, mettre en ligne un projet sur OVH et communiquer efficacement avec le client pour répondre à ses besoins."
+    }
   ],
   csb: [
     {
-      title: "CSB-Klinik",
+      title: 'CSB-Klinik',
       clientRequest:
         "Développer un site d'actualités médicales de type 'Le Monde', avec un abonnement récurrent et une refonte visuelle.",
       challenges: [
-        "Création du site from scratch avec un pair",
-        "Travail en équipe avec communication via un intermédiaire",
+        'Création du site from scratch avec un pair',
+        'Travail en équipe avec communication via un intermédiaire',
         "Système d'abonnement via Stripe",
         "Mise en place d'une newsletter",
-        "Architecture du back-office",
-        "Gestion des accès multi-niveaux au back-office",
+        'Architecture du back-office',
+        'Gestion des accès multi-niveaux au back-office',
         "Mise en place d'environnements de pré-production et production",
-        "Délais très courts",
+        'Délais très courts'
       ],
       technologies: [
         arsenal[1],
@@ -115,35 +134,35 @@ export const detailProject: DetailProjectType = {
         arsenal[6],
         arsenal[12],
         arsenal[9],
-        arsenal[13],
+        arsenal[13]
       ],
-      collaborators: "3",
-      url: "https://csb-klinik.lu/",
+      collaborators: '3',
+      url: 'https://csb-klinik.lu/',
       photo: CSBImg,
       notes:
-        "Projet très formateur : première utilisation de Stripe, travail en équipe, gestion de délais courts, back-office complexe, nombreux changements de dernière minute. J'ai appris à écouter mes pairs, brainstormer efficacement et écrire du code modulable.",
-    },
+        "Projet très formateur : première utilisation de Stripe, travail en équipe, gestion de délais courts, back-office complexe, nombreux changements de dernière minute. J'ai appris à écouter mes pairs, brainstormer efficacement et écrire du code modulable."
+    }
   ],
   agence: [
     {
-      title: "Agence Graziani",
+      title: 'Agence Graziani',
       clientRequest:
-        "Développer une base de données centralisant un large éventail de profils afin de simplifier et optimiser le processus de casting.",
+        'Développer une base de données centralisant un large éventail de profils afin de simplifier et optimiser le processus de casting.',
       challenges: [
-        "Gestion des accès multi-niveaux",
-        "Formulaires à plusieurs étapes",
-        "Filtres complexes (âge, taille, couleur, corpulence, hobbies, statut acteur/figurant/modèle)",
-        "Génération de fichiers Excel et PDF",
-        "Support de nombreux médias (vidéos, images)",
-        "Envoi de packages personnalisés",
-        "Système de like/dislike",
+        'Gestion des accès multi-niveaux',
+        'Formulaires à plusieurs étapes',
+        'Filtres complexes (âge, taille, couleur, corpulence, hobbies, statut acteur/figurant/modèle)',
+        'Génération de fichiers Excel et PDF',
+        'Support de nombreux médias (vidéos, images)',
+        'Envoi de packages personnalisés',
+        'Système de like/dislike',
         "Architecture d'un back-office complet",
-        "Système de mailing",
-        "Environnements prod et pré-prod",
+        'Système de mailing',
+        'Environnements prod et pré-prod',
         "Mise en place d'une CI",
-        "Délais courts",
-        "Caching",
-        "i18n (internationalisation)",
+        'Délais courts',
+        'Caching',
+        'i18n (internationalisation)'
       ],
       technologies: [
         arsenal[1],
@@ -153,13 +172,13 @@ export const detailProject: DetailProjectType = {
         arsenal[6],
         arsenal[12],
         arsenal[9],
-        arsenal[13],
+        arsenal[13]
       ],
-      collaborators: "Aucun",
-      url: "https://www.agencegraziani.fr",
+      collaborators: 'Aucun',
+      url: 'https://www.agencegraziani.fr',
       photo: AGENCE,
       notes:
-        "Projet exigeant avec beaucoup de pression client. Nombreux ajouts et remaniements fonctionnels. Très enrichissant malgré les contraintes.",
-    },
-  ],
-};
+        'Projet exigeant avec beaucoup de pression client. Nombreux ajouts et remaniements fonctionnels. Très enrichissant malgré les contraintes.'
+    }
+  ]
+}
