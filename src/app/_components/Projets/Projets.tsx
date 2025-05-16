@@ -1,5 +1,4 @@
 "use client";
-type Props = {};
 import React from "react";
 import { cn } from "../../../../lib/utils/classnames";
 import { detailProject, ProjectCard, projetsCardData } from "./data";
@@ -7,7 +6,7 @@ import { DetailProject } from "./DetailProject";
 
 export type ProjectUnion = keyof typeof detailProject;
 
-export const Projets = ({}: Props) => {
+export const Projets = () => {
   const [currentProject, setCurrentProject] =
     React.useState<ProjectUnion | null>(null);
 

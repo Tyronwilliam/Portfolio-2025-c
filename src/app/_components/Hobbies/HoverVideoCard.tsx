@@ -1,7 +1,7 @@
 'use client'
 
 import Image, { StaticImageData } from 'next/image'
-import { RefObject, useRef } from 'react'
+import { RefObject } from 'react'
 
 interface HoverVideoCardProps {
   title: string

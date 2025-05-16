@@ -9,35 +9,30 @@ export const BackgroundImg = ({
   isVideo: boolean
   selectedTab: NavigationLabel
 }) => {
-  const [isLoading, setIsLoading] = React.useState(true) // Ajout d'un état pour gérer le chargement
-
   const videoRef = useRef<HTMLVideoElement>(null)
-  const videoSrc =
-    selectedTab === NavigationLabel.Accueil
-      ? '/videos/animated.mp4'
-      : selectedTab === NavigationLabel.APropos || selectedTab === NavigationLabel.Hobbies
-        ? '/videos/animated2.mp4'
-        : selectedTab === NavigationLabel.Projets
-          ? '/videos/animated3.mp4'
-          : '/videos/animated.mp4' // You can return null or a default video if none of the conditions match
 
-  const posterImage =
-    selectedTab === NavigationLabel.Accueil
-      ? '/images/animated.png'
-      : selectedTab === NavigationLabel.APropos
-        ? '/images/animated2.png'
-        : selectedTab === NavigationLabel.Projets
-          ? '/images/animated3.png'
-          : '/images/animated.png'
-  const handleVideoLoad = () => {
-    setIsLoading(false) // Une fois la vidéo chargée, on cache l'image
+  const VIDEO_MAP: Record<string, string> = {
+    [NavigationLabel.Accueil]: '/videos/animated.mp4',
+    [NavigationLabel.APropos]: '/videos/animated2.mp4',
+    [NavigationLabel.Projets]: '/videos/animated3.mp4',
+    [NavigationLabel.Hobbies]: '/videos/animated2.mp4' // réutilisé
   }
 
+  const IMAGE_MAP: Record<string, string> = {
+    [NavigationLabel.Accueil]: '/images/animated.png',
+    [NavigationLabel.APropos]: '/images/animated2.png',
+    [NavigationLabel.Projets]: '/images/animated3.png',
+    [NavigationLabel.Hobbies]: '/images/animated2.png'
+  }
+
+  const videoSrc = VIDEO_MAP[selectedTab] ?? '/videos/animated.mp4'
+  const posterImage = IMAGE_MAP[selectedTab] ?? '/images/animated.png'
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && videoRef.current.currentSrc !== videoSrc) {
       videoRef.current.load()
     }
   }, [videoSrc])
+
   return isVideo ? (
     <AnimatePresence mode="wait">
       <motion.video
@@ -47,7 +42,6 @@ export const BackgroundImg = ({
         muted
         playsInline
         id="background-video"
-        onCanPlayThrough={handleVideoLoad} // Quand la vidéo peut être lue, on cache l'image
         poster={posterImage}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

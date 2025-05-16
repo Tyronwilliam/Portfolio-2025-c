@@ -17,28 +17,46 @@ export const arsenal = [
     className="w-full h-full text-[#38BDF8]"
     aria-label="Tailwind CSS"
     title="Tailwind CSS"
+    key="Tailwind"
   />,
-  <FaHtml5 className="w-full h-full text-[#E34F26]" aria-label="HTML5" title="HTML5" />,
-  <FaCss3Alt className="w-full h-full text-[#1572B6]" aria-label="CSS3" title="CSS3" />,
+  <FaHtml5 className="w-full h-full text-[#E34F26]" aria-label="HTML5" title="HTML5" key="HTML5" />,
+  <FaCss3Alt className="w-full h-full text-[#1572B6]" aria-label="CSS3" title="CSS3" key="CSS3" />,
   <IoLogoJavascript
     className="w-full h-full text-[#F7DF1E]"
     aria-label="JavaScript"
     title="JavaScript"
+    key="JavaScript"
   />,
   <SiTypescript
     className="w-full h-full text-[#3178C6]"
     aria-label="TypeScript"
     title="TypeScript"
+    key="TypeScript"
   />,
-  <FaSass className="w-full h-full text-[#CC6699]" aria-label="Sass" title="Sass" />,
-  <RiNextjsFill className="w-full h-full" aria-label="Next.js" title="Next.js" />,
-  <FaReact className="w-full h-full text-[#61DAFB]" aria-label="React" title="React" />,
-  <FaVuejs className="w-full h-full text-[#42B883]" aria-label="Vue.js" title="Vue.js" />,
-  <FaGitAlt className="w-full h-full text-[#F05032]" aria-label="Git" title="Git" />,
-  <FaNodeJs className="w-full h-full text-[#339933]" aria-label="Node.js" title="Node.js" />,
-  <TbSql className="w-full h-full text-[#003B57]" aria-label="SQL" title="SQL" />,
-  <SiStrapi className="w-full h-full text-[#003B57]" aria-label="Strapi" title="Strapi" />,
-  <SiOvh className="w-full h-full text-[#003B57]" aria-label="OVH" title="OVH" />
+  <FaSass className="w-full h-full text-[#CC6699]" aria-label="Sass" title="Sass" key="Sass" />,
+  <RiNextjsFill className="w-full h-full" aria-label="Next.js" title="Next.js" key="Next" />,
+  <FaReact className="w-full h-full text-[#61DAFB]" aria-label="React" title="React" key="React" />,
+  <FaVuejs
+    className="w-full h-full text-[#42B883]"
+    aria-label="Vue.js"
+    title="Vue.js"
+    key="HTML5"
+  />,
+  <FaGitAlt className="w-full h-full text-[#F05032]" aria-label="Git" title="Git" key="HTML5" />,
+  <FaNodeJs
+    className="w-full h-full text-[#339933]"
+    aria-label="Node.js"
+    title="Node.js"
+    key="Node"
+  />,
+  <TbSql className="w-full h-full text-[#003B57]" aria-label="SQL" title="SQL" key="SQL" />,
+  <SiStrapi
+    className="w-full h-full text-[#003B57]"
+    aria-label="Strapi"
+    title="Strapi"
+    key="Strapi"
+  />,
+  <SiOvh className="w-full h-full text-[#003B57]" aria-label="OVH" title="OVH" key="OVH" />
 ]
 export interface ProjectCard {
   title: string

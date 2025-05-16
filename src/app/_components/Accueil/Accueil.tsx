@@ -10,7 +10,7 @@ const arraySquare = [['Tyron'], [''], ['William']]
 const profession = 'Développeur Frontend'
 
 export const Accueil = () => {
-  const [show, setShow] = useState<Boolean>(false)
+  const [show, setShow] = useState<boolean>(false)
 
   useEffect(() => {
     setShow(true)

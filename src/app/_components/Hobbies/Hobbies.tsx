@@ -1,10 +1,9 @@
-import { RefObject, useRef, useState } from 'react'
+import { RefObject, useRef } from 'react'
 import Coding from '../../../../public/images/tyron-coding.png'
 import Piano from '../../../../public/images/tyron-piano.png'
 import Sport from '../../../../public/images/tyron-sport.png'
 import { HoverVideoCard } from './HoverVideoCard'
 
-//@ts-ignore
 export default function Hobbies() {
   const videoSport = useRef<HTMLVideoElement | null>(null)
   const videoCode = useRef<HTMLVideoElement | null>(null)

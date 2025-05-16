@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import {
-  Geist,
-  Inter,
   Montserrat,
   Poppins,
   PT_Sans_Narrow,

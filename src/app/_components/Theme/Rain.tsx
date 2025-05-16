@@ -20,7 +20,7 @@ const RealisticRain = () => {
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let drop of drops) {
+      for (const drop of drops) {
         const gradient = ctx.createLinearGradient(
           drop.x,
           drop.y,
