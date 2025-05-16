@@ -1,9 +1,9 @@
 @import 'tailwindcss';
-@import url('./css/animation.css');
-@import url('./css/project.css');
-@import url('./css/glass.css');
-@import url('./css/accueil.css');
-@import url('./css/swiper-custom.css');
+@import url('./styles/animation.css');
+@import url('./styles/project.css');
+@import url('./styles/glass.css');
+@import url('./styles/accueil.css');
+@import url('./styles/swiper-custom.css');
 @theme {
   --animate-fadeIn: fadeIn 2s ease-in-out forwards;
   --animate-shrinkHeight: shrinkHeight 2s ease-in-out forwards;
