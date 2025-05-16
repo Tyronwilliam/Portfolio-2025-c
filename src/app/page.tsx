@@ -10,17 +10,7 @@ export default function Home() {
 
   return (
     <section className={cn('relative w-full h-full')}>
-      {/* <Glass selectedTab={selectedTab}> */}{' '}
-      {/* <Navigation selectedTab={selectedTab} handleSelectedTab={handleSelectedTab} /> */}
-      {/* </Glass> */}
-      {/* <section
-        className={cn(
-          'relative w-full h-full flex flex-col gap-3 mx-auto z-50',
-          selectedTab === NavigationLabel.APropos ? 'xl:gap-5' : 'xl:gap-5'
-        )}
-      > */}
       <TabViews selectedTab={selectedTab} />
-      {/* </section> */}
       <RealisticRain />
     </section>
   )

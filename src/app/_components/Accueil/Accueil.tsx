@@ -16,11 +16,15 @@ export const Accueil = () => {
     setShow(true)
   }, [])
   return (
-    <section className="w-full h-full relative flex-1 flex flex-col gap-10 md:gap-0 lg:p-4 lg:pt-0 grow ">
+    <section className="w-full h-full  flex-1 flex flex-col gap-10 md:gap-0 lg:p-4 lg:pt-0 pb-0 ">
       <Image
         src={TyronStanding}
         alt="Tyron Standing 3D Model"
-        className="w-1/2 max-w-[512px] object-contain h-auto   max-h-[80vh] -bottom-[2.2%]  left-0 absolute"
+        className={cn(
+          'w-1/2 max-w-[512px] object-contain h-auto max-h-[80vh] bottom-0   left-0 absolute transition-opacity opacity-0 duration-700 ease-in-out',
+          show && 'opacity-100'
+        )}
+        priority
       />
       <h1 className="name_title flex flex-col items-center gap-2">
         {arraySquare.map((group, groupIndex) => (

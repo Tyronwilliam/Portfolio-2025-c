@@ -1,39 +1,36 @@
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { cn } from "../../../../lib/utils/classnames";
-import { detailProject } from "./data";
-import { ProjectUnion } from "./Projets";
+import Image from 'next/image'
+import React, { useEffect } from 'react'
+import { cn } from '../../../../lib/utils/classnames'
+import { detailProject } from './data'
+import { ProjectUnion } from './Projets'
 interface DetailProjectProps {
-  currentProject: ProjectUnion;
-  backTo: (arg: null) => void;
+  currentProject: ProjectUnion
+  backTo: (arg: null) => void
 }
 
-export const DetailProject = ({
-  currentProject,
-  backTo,
-}: DetailProjectProps) => {
-  const [isClick, setIsClick] = React.useState(false);
-  const [visible, setVisible] = React.useState(false);
+export const DetailProject = ({ currentProject, backTo }: DetailProjectProps) => {
+  const [isClick, setIsClick] = React.useState(false)
+  const [visible, setVisible] = React.useState(false)
 
-  const project = detailProject[currentProject]?.[0];
+  const project = detailProject[currentProject]?.[0]
   useEffect(() => {
     if (currentProject !== null) {
-      setVisible(true);
+      setVisible(true)
     }
-  }, [currentProject]);
-  if (!project) return <p>Projet introuvable</p>;
+  }, [currentProject])
+  if (!project) return <p>Projet introuvable</p>
 
-  const isAgence = currentProject === "agence";
-  const isCoop = currentProject === "coop";
-  const isCsb = currentProject === "csb";
+  const isAgence = currentProject === 'agence'
+  const isCoop = currentProject === 'coop'
+  const isCsb = currentProject === 'csb'
 
   return (
     <section
       className={cn(
-        "relative w-full h-full flex flex-col-reverse gap-10 md:flex-row",
-        "transition-opacity duration-500",
-        isCsb ? "text-black" : "text-white",
-        visible ? "opacity-100" : "opacity-0"
+        'relative w-full h-full flex flex-col-reverse gap-10 md:flex-row',
+        'transition-opacity duration-500',
+        isCsb ? 'text-black' : 'text-white',
+        visible ? 'opacity-100' : 'opacity-0'
       )}
     >
       {isAgence && <MockUpCinema isClick={isClick} setIsClick={setIsClick} />}
@@ -41,10 +38,10 @@ export const DetailProject = ({
       {/* LEFT COLUMN */}
       <aside
         className={cn(
-          "w-full grow md:max-w-[35%] xl:max-w-[25%] flex flex-col items-center p-3 gap-12 md:p-8",
-          isAgence && "font-robotoCondensed text-white bg-black",
-          isCoop && "font-montserrat bg-[#5a675a] beatuy_radius-right",
-          isCsb && "font-roboto bg-white rounded-md"
+          'w-full  md:max-w-[35%] xl:max-w-[25%] flex flex-col items-center p-3 gap-12 md:p-8',
+          isAgence && 'font-robotoCondensed text-white bg-black',
+          isCoop && 'font-montserrat bg-[#5a675a] beatuy_radius-right',
+          isCsb && 'font-roboto bg-white rounded-md'
         )}
       >
         <div className="relative w-full h-[250px] md:h-1/5">
@@ -63,10 +60,7 @@ export const DetailProject = ({
             {project.technologies?.map((tech, i) => (
               <li
                 key={i}
-                className={cn(
-                  "w-10 h-10",
-                  isCsb && i === 4 ? "text-black" : "text-white"
-                )}
+                className={cn('w-10 h-10', isCsb && i === 4 ? 'text-black' : 'text-white')}
               >
                 {tech}
               </li>
@@ -93,12 +87,10 @@ export const DetailProject = ({
           aria-label="back"
           onClick={() => backTo(null)}
           className={cn(
-            "p-3 rounded-sm transition-all border-[1px]",
-            isCoop &&
-              "border-[#e9b535]  hover:text-[#5a675a] hover:bg-[#e9b535]",
-            isAgence && "border-white  hover:bg-white hover:text-black",
-            isCsb &&
-              "border-[#2f98e9] bg-[#2f98e9] text-white hover:text-[#085b89] hover:bg-white"
+            'p-3 rounded-sm transition-all border-[1px]',
+            isCoop && 'border-[#e9b535]  hover:text-[#5a675a] hover:bg-[#e9b535]',
+            isAgence && 'border-white  hover:bg-white hover:text-black',
+            isCsb && 'border-[#2f98e9] bg-[#2f98e9] text-white hover:text-[#085b89] hover:bg-white'
           )}
         >
           Back
@@ -108,10 +100,10 @@ export const DetailProject = ({
       {/* RIGHT COLUMN */}
       <main
         className={cn(
-          "relative w-full flex-1 h-full flex flex-col gap-8 p-3 overflow-y-scroll scroll-container scrollbar-hide",
-          isAgence && "font-robotoCondensed bg-black md:p-6",
-          isCoop && "font-montserrat text-white md:p-6",
-          isCsb && "font-roboto bg-white rounded-md md:px-8 md:py-6"
+          'relative w-full h-full flex flex-col gap-8 p-3 overflow-y-scroll scroll-container scrollbar-hide',
+          isAgence && 'font-robotoCondensed bg-black md:p-6',
+          isCoop && 'font-montserrat text-white md:p-6',
+          isCsb && 'font-roboto bg-white rounded-md md:px-8 md:py-6'
         )}
       >
         {isCoop ? (
@@ -125,8 +117,8 @@ export const DetailProject = ({
         ) : (
           <h1
             className={cn(
-              "text-5xl text-center font-bold uppercase",
-              isCsb && "text-[#085b89] font-raleway"
+              'text-5xl text-center font-bold uppercase',
+              isCsb && 'text-[#085b89] font-raleway'
             )}
           >
             {project.title}
@@ -143,10 +135,10 @@ export const DetailProject = ({
               <li
                 key={item}
                 className={cn(
-                  "p-1 text-lg opacity-0 animate-fadeIn",
-                  isAgence && "glassomorph_effect_no_radius",
-                  isCoop && "glassomorph_effect_coop",
-                  isCsb && "light_blue_bg_csb text-white"
+                  'p-1 text-lg opacity-0 animate-fadeIn',
+                  isAgence && 'glassomorph_effect_no_radius',
+                  isCoop && 'glassomorph_effect_coop',
+                  isCsb && 'light_blue_bg_csb text-white'
                 )}
                 style={{ animationDelay: `${i * 100}ms` }}
               >
@@ -161,48 +153,44 @@ export const DetailProject = ({
         </Section>
       </main>
     </section>
-  );
-};
+  )
+}
 
 const Section = ({
   title,
   isCsb,
   children,
-  customClass,
+  customClass
 }: {
-  title: string;
-  isCsb: boolean;
-  children: React.ReactNode;
-  customClass?: string;
+  title: string
+  isCsb: boolean
+  children: React.ReactNode
+  customClass?: string
 }) => (
   <div className="flex flex-col gap-2">
     <h2
-      className={cn(
-        "text-2xl font-semibold",
-        isCsb && "font-raleway",
-        customClass && customClass
-      )}
+      className={cn('text-2xl font-semibold', isCsb && 'font-raleway', customClass && customClass)}
     >
       {title}
     </h2>
     {children}
   </div>
-);
+)
 
 const MockUpCinema = ({
   isClick,
-  setIsClick,
+  setIsClick
 }: {
-  isClick: boolean;
-  setIsClick: (arg: boolean) => void;
+  isClick: boolean
+  setIsClick: (arg: boolean) => void
 }) => {
   return (
     <>
       {/* Top black panel */}
       <div
         className={cn(
-          "bg-black md:absolute md:top-0 md:left-0 md:w-full md:h-[55%] z-40",
-          isClick && "animate-shrinkHeight"
+          'bg-black md:absolute md:top-0 md:left-0 md:w-full md:h-[55%] z-40',
+          isClick && 'animate-shrinkHeight'
         )}
       />
 
@@ -224,10 +212,10 @@ const MockUpCinema = ({
       {/* Bottom black panel */}
       <div
         className={cn(
-          "bg-black md:absolute md:bottom-0 md:left-0 md:w-full md:h-1/2 z-30",
-          isClick && "animate-shrinkHeight"
+          'bg-black md:absolute md:bottom-0 md:left-0 md:w-full md:h-1/2 z-30',
+          isClick && 'animate-shrinkHeight'
         )}
       />
     </>
-  );
-};
+  )
+}

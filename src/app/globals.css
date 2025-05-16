@@ -3,7 +3,6 @@
 @theme {
   --animate-fadeIn: fadeIn 2s ease-in-out forwards;
   --animate-shrinkHeight: shrinkHeight 2s ease-in-out forwards;
-  --animate-fadeUp: fadeUp 1s ease-out forwards;
   --font-sans: var(--font-poppins);
   --font-robotoCondensed: var(--font-robotoCondensed);
   --font-roboto: var(--font-roboto);
@@ -347,16 +346,6 @@ button {
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(200%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* PROJECT */
 
 .container_title {

@@ -26,13 +26,11 @@ export const TabViews = ({ selectedTab }: Props) => {
           selectedTab={selectedTab}
           bgColor="bg-gradient-to-b from-[#171932] via-[#030617] to-black"
         />
-        {/* <Glass selectedTab={NavigationLabel.APropos}> */}
         <div className="relative w-full min-h-fit   max-w-[1300px] mx-auto z-50 flex flex-col items-center justify-center p-4  md:p-5 ">
           <Apropos />
         </div>
-        {/* </Glass> */}
       </div>
-      <div className="relative w-full md:h-screen px-5 flex items-center justify-center gap-5 mb-5">
+      <div className="relative w-full h-full md:min-h-screen xl:h-screen px-5 flex items-center justify-center gap-5 mb-5 overflow-hidden">
         <BackgroundImg isVideo={true} selectedTab={NavigationLabel.Projets} />
         <Glass selectedTab={NavigationLabel.Projets}>
           <Projets />
@@ -54,48 +52,6 @@ export const TabViews = ({ selectedTab }: Props) => {
           <Hobbies />
         </Glass>
       </div>
-      {/* <div
-        className={`${selectedTab !== NavigationLabel.Accueil ? 'exit-right-animation' : 'enter-animation'}`}
-      >
-        <Accueil />
-      </div>
-      <div
-        className={cn(
-          selectedTab === NavigationLabel.APropos
-            ? 'enter-animation'
-            : direction === 'right'
-              ? 'exit-right-animation'
-              : 'exit-left-animation'
-        )}
-      >
-        <Apropos />
-      </div>
-      <div
-        className={`${selectedTab !== NavigationLabel.Projets ? 'exit-bottom-animation' : 'enter-top-animation'}`}
-      >
-        <Projets />
-      </div>
-      <div
-        className={`${selectedTab !== NavigationLabel.Curriculum ? 'exit-bottom-animation' : 'enter-top-animation'}`}
-      >
-        <Curriculum />
-      </div>
-      <div
-        className={cn(
-          selectedTab === NavigationLabel.Hobbies
-            ? 'enter-animation'
-            : direction === 'right'
-              ? 'exit-right-animation'
-              : 'exit-left-animation'
-        )}
-      >
-        <Hobbies />
-      </div>
-      <div
-        className={`${selectedTab !== NavigationLabel.FunFact ? 'exit-bottom-animation' : 'enter-top-animation'}`}
-      >
-        <FunFactGrid />
-      </div> */}
     </section>
   )
 }

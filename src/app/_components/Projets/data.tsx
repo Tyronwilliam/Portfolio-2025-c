@@ -64,33 +64,28 @@ export interface ProjectCard {
   mainClass: string
   subClass: string
   union: ProjectUnion
-  delay: number
 }
 export const projetsCardData: ProjectCard[] = [
   {
     title: 'LA COOP',
     icon: <CiBeerMugFull className="w-20 h-20 text-black group-hover:text-[#e9b535]" />,
-    mainClass: 'glassomorph_effect_card_coop opacity-0 animate-fadeUp',
+    mainClass: 'glassomorph_effect_card_coop ',
     subClass: 'group-hover:text-[#e9b535] font-montserrat',
-    union: 'coop',
-    delay: 0
+    union: 'coop'
   },
   {
     title: 'CSB Klinik',
     icon: <BiHealth className="w-20 h-20 text-black group-hover:text-white" />,
-    mainClass: 'glassomorph_effect_card_csb bg-transparent opacity-0 animate-fadeUp',
+    mainClass: 'glassomorph_effect_card_csb bg-transparent ',
     subClass: 'group-hover:text-white font-roboto',
-    union: 'csb',
-    delay: 0.2
+    union: 'csb'
   },
   {
     title: 'Agence Graziani',
     icon: <BsCameraReelsFill className="w-20 h-20 text-black group-hover:text-white" />,
-    mainClass:
-      'glassomorph_effect_card_agence bg-transparent font-robotoCondensed opacity-0 animate-fadeUp',
-    subClass: 'group-hover:text-white',
-    union: 'agence',
-    delay: 0.4
+    mainClass: 'glassomorph_effect_card_agence bg-transparent  ',
+    subClass: 'group-hover:text-white font-robotoCondensed',
+    union: 'agence'
   }
 ]
 export interface ProjectDetail {
