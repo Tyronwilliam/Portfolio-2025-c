@@ -12,9 +12,9 @@
     255,
     255,
     0.05
-  ); /* ultra léger, juste un soupçon de blanc */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* ombre légère et naturelle */
-  backdrop-filter: blur(0.8px); /* flou fort pour effet vitre */
+  ); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(0.8px); 
   -webkit-backdrop-filter: blur(0px);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
