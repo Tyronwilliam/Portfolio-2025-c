@@ -14,12 +14,7 @@ type Props = {
 }
 export const TabViews = ({ selectedTab, direction }: Props) => {
   return (
-    <section
-      className={cn(
-        'w-full h-[calc(100%-40px)] shrink-0 p-3 ',
-        selectedTab !== NavigationLabel.Accueil && 'flex items-center justify-center'
-      )}
-    >
+    <section className={cn('w-full h-[calc(100%-40px)] shrink-0 p-3 ')}>
       <div
         className={`${selectedTab !== NavigationLabel.Accueil ? 'exit-right-animation' : 'enter-animation'}`}
       >
