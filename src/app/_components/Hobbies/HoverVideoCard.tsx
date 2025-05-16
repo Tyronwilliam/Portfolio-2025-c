@@ -29,6 +29,7 @@ export const HoverVideoCard = ({
     if (videoRef.current) {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
+      
     }
   }
 
