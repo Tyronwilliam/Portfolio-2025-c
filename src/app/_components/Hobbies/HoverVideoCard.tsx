@@ -1,9 +1,20 @@
-import { useRef, useState } from 'react'
-import Image from 'next/image'
-import { FaPlay, FaPause } from 'react-icons/fa'
-
-export default function HoverVideoCard({ title, imageSrc, videoSrc, customClassSpan }: any) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+import Image, { StaticImageData } from 'next/image'
+import { RefObject, useState } from 'react'
+import { FaPause, FaPlay } from 'react-icons/fa'
+type HoverVideoCardProps = {
+  title: string
+  imageSrc: StaticImageData
+  videoSrc: string
+  customClassSpan: string
+  videoRef: RefObject<HTMLVideoElement>
+}
+export default function HoverVideoCard({
+  title,
+  imageSrc,
+  videoSrc,
+  customClassSpan,
+  videoRef
+}: HoverVideoCardProps) {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const handleMouseEnter = () => {

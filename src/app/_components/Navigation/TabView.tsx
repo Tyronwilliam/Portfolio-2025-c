@@ -10,9 +10,8 @@ import { Projets } from '../Projets/Projets'
 
 type Props = {
   selectedTab: NavigationLabel
-  direction: string
 }
-export const TabViews = ({ selectedTab, direction }: Props) => {
+export const TabViews = ({ selectedTab }: Props) => {
   return (
     <section className={cn('w-full h-full flex flex-col ')}>
       <div className="relative w-full h-screen p-5 flex items-center justify-center">
@@ -50,10 +49,7 @@ export const TabViews = ({ selectedTab, direction }: Props) => {
         </Glass>
       </div>{' '}
       <div className="relative w-full md:min-h-screen px-5 flex items-center justify-center">
-        <BackgroundImg
-          isVideo={true}
-          selectedTab={NavigationLabel.Hobbies}
-        />
+        <BackgroundImg isVideo={true} selectedTab={NavigationLabel.Hobbies} />
         <Glass selectedTab={NavigationLabel.Accueil}>
           <Hobbies />
         </Glass>
