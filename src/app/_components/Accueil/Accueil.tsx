@@ -20,7 +20,7 @@ export const Accueil = () => {
       <Image
         src={TyronStanding}
         alt="Tyron Standing 3D Model"
-        className="w-1/2 max-w-[512px] object-contain h-auto   max-h-[80vh] md:-bottom-[5%] -bottom-[8%]  left-0 absolute"
+        className="w-1/2 max-w-[512px] object-contain h-auto   max-h-[80vh] -bottom-[2.2%]  left-0 absolute"
       />
       <h1 className="name_title flex flex-col items-center gap-2">
         {arraySquare.map((group, groupIndex) => (

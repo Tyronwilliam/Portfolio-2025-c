@@ -32,8 +32,9 @@ body {
 @media screen and (min-width: 768px) {
   html,
   body {
-    overflow: hidden;
-    height: 100dvh;
+    /* height: 100%; */
+    /* overflow: hidden; */
+    /* height: 100dvh; */
   }
 }
 body {
@@ -150,7 +151,7 @@ button {
 }
 
 .glassomorph_effect_bis {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 8px rgba(31, 38, 135, 0.25);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);

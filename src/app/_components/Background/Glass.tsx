@@ -1,21 +1,21 @@
-import { NavigationLabel } from "@/app/hooks/useNavigation";
-import { cn } from "../../../../lib/utils/classnames";
+import { NavigationLabel } from '@/app/hooks/useNavigation'
+import { cn } from '../../../../lib/utils/classnames'
 
 type Props = {
-  children: React.ReactNode;
-  selectedTab: NavigationLabel;
-};
+  children: React.ReactNode
+  selectedTab: NavigationLabel
+}
 export const Glass = ({ children, selectedTab }: Props) => {
   return (
     <div
       className={cn(
-        "relative w-full h-full md:max-h-[898px] overflow-hidden  max-w-[1300px] mx-auto z-50 flex flex-col items-center justify-center p-6 md:p-4  lg:p-5 ",
-        selectedTab === NavigationLabel.Accueil
-          ? "glass_accueil rounded-xl"
-          : "glass"
+        'relative w-full h-full md:h-[90%]  max-w-[1300px] max-h-[800px] mx-auto z-50 flex flex-col items-center justify-center p-4  lg:p-5 ',
+        selectedTab === NavigationLabel.Accueil || selectedTab === NavigationLabel.Projets
+          ? 'glass_accueil rounded-xl'
+          : 'glassomorph_effect_bis '
       )}
     >
       {children}
     </div>
-  );
-};
+  )
+}

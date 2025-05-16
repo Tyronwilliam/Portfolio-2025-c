@@ -1,41 +1,46 @@
-'use client'
+import { useRef, useState } from 'react'
+import Image from 'next/image'
+import { FaPlay, FaPause } from 'react-icons/fa'
 
-import Image, { StaticImageData } from 'next/image'
-import { RefObject } from 'react'
+export default function HoverVideoCard({ title, imageSrc, videoSrc, customClassSpan }: any) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
-interface HoverVideoCardProps {
-  title: string
-  imageSrc: StaticImageData
-  videoSrc: string
-  videoRef: RefObject<HTMLVideoElement>
-  customClassSpan: string
-}
-
-export const HoverVideoCard = ({
-  title,
-  imageSrc,
-  videoSrc,
-  videoRef,
-  customClassSpan
-}: HoverVideoCardProps) => {
   const handleMouseEnter = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play()
+      if (title === 'Piano') {
+        videoRef.current.muted = false
+      } else {
+        videoRef.current.currentTime = 0
+        videoRef.current.muted = true
+        videoRef.current.play().catch(() => {})
+      }
     }
   }
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
+    if (videoRef.current && title !== 'Piano') {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
-      
+    }
+  }
+
+  const togglePlay = () => {
+    if (!videoRef.current) return
+    if (videoRef.current.paused) {
+      videoRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(console.warn)
+    } else {
+      videoRef.current.pause()
+      setIsPlaying(false)
     }
   }
 
   return (
     <div
-      className="relative w-full md:w-1/3 flex flex-col items-start group overflow-hidden cursor-pointer "
+      className="relative w-full md:w-1/3 flex flex-col items-start group overflow-hidden cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -46,14 +51,14 @@ export const HoverVideoCard = ({
       <Image
         src={imageSrc}
         alt={title}
-        className="w-full h-auto object-contain max-h-[545px] z-0 "
+        className="w-full h-auto object-contain max-h-[545px] z-0"
         priority
       />
 
       {/* Vidéo en hover */}
       <video
         ref={videoRef}
-        muted={title === 'Piano' ? false : true}
+        muted
         loop
         playsInline
         preload="auto"
@@ -61,6 +66,16 @@ export const HoverVideoCard = ({
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
+
+      {/* Play/Pause button pour Piano */}
+      {title === 'Piano' && (
+        <button
+          onClick={togglePlay}
+          className="absolute bottom-4 right-4 z-20 bg-white/80 rounded-full p-3 backdrop-blur-sm shadow-lg hover:scale-105 transition-transform"
+        >
+          {isPlaying ? <FaPause className="text-black" /> : <FaPlay className="text-black" />}
+        </button>
+      )}
     </div>
   )
 }

@@ -4,23 +4,25 @@ import React, { useEffect, useRef } from 'react'
 
 export const BackgroundImg = ({
   isVideo,
-  selectedTab
+  selectedTab,
+  bgColor
 }: {
   isVideo: boolean
   selectedTab: NavigationLabel
+  bgColor?: string
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const VIDEO_MAP: Record<string, string> = {
     [NavigationLabel.Accueil]: '/videos/animated.mp4',
-    [NavigationLabel.APropos]: '/videos/animated2.mp4',
+    [NavigationLabel.APropos]: '/videos/animated.mp4',
     [NavigationLabel.Projets]: '/videos/animated3.mp4',
     [NavigationLabel.Hobbies]: '/videos/animated2.mp4' // réutilisé
   }
 
   const IMAGE_MAP: Record<string, string> = {
     [NavigationLabel.Accueil]: '/images/animated.png',
-    [NavigationLabel.APropos]: '/images/animated2.png',
+    [NavigationLabel.APropos]: '/images/animated.png',
     [NavigationLabel.Projets]: '/images/animated3.png',
     [NavigationLabel.Hobbies]: '/images/animated2.png'
   }
@@ -47,7 +49,7 @@ export const BackgroundImg = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="absolute top-0 left-0 w-full h-full md:h-screen object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full  object-cover z-0"
         ref={videoRef}
       >
         <source src={videoSrc} type="video/mp4" />
@@ -55,7 +57,7 @@ export const BackgroundImg = ({
       </motion.video>
     </AnimatePresence>
   ) : (
-    <div></div>
+    <div className={`${bgColor} w-full h-full absolute top-0 left-0`}></div>
 
     // <Image
     //   src={Forest}
