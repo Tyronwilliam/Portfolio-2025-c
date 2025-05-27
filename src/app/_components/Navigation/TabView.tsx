@@ -7,6 +7,7 @@ import { Glass } from '../Background/Glass'
 import { Curriculum } from '../Curriculum/Curriculum'
 import Hobbies from '../Hobbies/Hobbies'
 import { Projets } from '../Projets/Projets'
+import Contact from '../Contact/Contact'
 
 type Props = {
   selectedTab: NavigationLabel
@@ -46,10 +47,21 @@ export const TabViews = ({ selectedTab }: Props) => {
           <Curriculum />
         </Glass>
       </div>{' '}
-      <div className="relative w-full md:min-h-screen px-5 flex items-center justify-center">
+      <div className="relative w-full md:min-h-screen px-5 flex items-center justify-center pb-5 md:pb-0">
         <BackgroundImg isVideo={true} selectedTab={NavigationLabel.Hobbies} />
         <Glass selectedTab={NavigationLabel.Accueil}>
           <Hobbies />
+        </Glass>
+      </div>
+      <div className="relative w-full md:min-h-screen px-5 flex items-center justify-center">
+        <BackgroundImg
+          isVideo={false}
+          selectedTab={NavigationLabel.Hobbies}
+          // bgColor="bg-gradient-to-b from-black to-[#A5A3E1]"
+          bgColor="bg-gradient-to-b from-[#171932] via-[#030617] to-black"
+        />
+        <Glass selectedTab={NavigationLabel.Accueil}>
+          <Contact />
         </Glass>
       </div>
     </section>
