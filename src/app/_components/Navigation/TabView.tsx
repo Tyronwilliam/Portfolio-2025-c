@@ -11,14 +11,15 @@ import Contact from '../Contact/Contact'
 
 type Props = {
   selectedTab: NavigationLabel
+  isComplete: boolean
 }
-export const TabViews = ({ selectedTab }: Props) => {
+export const TabViews = ({ selectedTab, isComplete }: Props) => {
   return (
     <section className={cn('w-full h-full flex flex-col ')}>
       <div className="relative w-full h-screen p-5 flex items-center justify-center">
         <BackgroundImg isVideo={true} selectedTab={NavigationLabel.Accueil} />
         <Glass selectedTab={selectedTab}>
-          <Accueil />
+          <Accueil isComplete={isComplete} />
         </Glass>
       </div>
       <div className="relative w-full lg:min-h-screen px-5 flex items-center justify-center mb-5">

@@ -5,7 +5,7 @@ import { BsCameraReelsFill } from 'react-icons/bs'
 import { ProjectUnion } from './Projets'
 import AGENCE from '../../../../public/images/agence.png'
 import COOP from '../../../../public/images/lacoop.png'
-import CSBImg from '../../../../public/images/csbimg.png'
+import CSBImgPreview from '../../../../public/images/csbimg.png'
 import { StaticImageData } from 'next/image'
 import { FaCss3Alt, FaGitAlt, FaHtml5, FaNodeJs, FaReact, FaSass, FaVuejs } from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
@@ -151,7 +151,7 @@ export const detailProject: DetailProjectType = {
       ],
       collaborators: '3',
       url: 'https://csb-klinik.lu/',
-      photo: CSBImg,
+      photo: CSBImgPreview,
       notes:
         "Projet très formateur : première utilisation de Stripe, travail en équipe, gestion de délais courts, back-office complexe, nombreux changements de dernière minute. J'ai appris à écouter mes pairs, brainstormer efficacement et écrire du code modulable."
     }

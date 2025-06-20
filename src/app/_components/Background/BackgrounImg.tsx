@@ -17,7 +17,7 @@ export const BackgroundImg = ({
     [NavigationLabel.Accueil]: '/videos/animated.mp4',
     [NavigationLabel.APropos]: '/videos/animated.mp4',
     [NavigationLabel.Projets]: '/videos/animated3.mp4',
-    [NavigationLabel.Hobbies]: '/videos/animated2.mp4' // réutilisé
+    [NavigationLabel.Hobbies]: '/videos/animated2.mp4'
   }
 
   const IMAGE_MAP: Record<string, string> = {
@@ -58,13 +58,5 @@ export const BackgroundImg = ({
     </AnimatePresence>
   ) : (
     <div className={`${bgColor} w-full h-full absolute top-0 left-0`}></div>
-
-    // <Image
-    //   src={Forest}
-    //   alt="bg"
-    //   fill
-    //   quality={100}
-    //   className="object-cover object-center absolute w-full h-full z-0"
-    // />
   )
 }

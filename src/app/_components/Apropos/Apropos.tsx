@@ -30,7 +30,7 @@ export const Apropos = () => {
       {/* Contenu principal (parcours + compétences) */}
       <section className="w-full f flex flex-col lg:flex-row gap-10">
         {/* Parcours */}
-        <div className="md:flex flex-col space-y-4 flex-1">
+        <article className="md:flex flex-col space-y-4 flex-1">
           <motion.div
             initial={{ opacity: 0, y: 350 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,10 +65,10 @@ export const Apropos = () => {
               projets variés, jusqu&apos;à décrocher un CDD chez Veepee, devenu CDI.
             </p>
           </motion.div>
-        </div>
+        </article>
 
         {/* Compétences et objectifs */}
-        <section className="flex flex-col  text-sm gap-4 w-full lg:w-[30%] shrink-0 justify-between">
+        <aside className="flex flex-col  text-sm gap-4 w-full lg:w-[30%] shrink-0 justify-between">
           {/* Compétences clés */}
           <div className="space-y-2">
             <h1 className="text-lg text-center font-bold">Compétences clés</h1>
@@ -93,7 +93,7 @@ export const Apropos = () => {
           </div>
 
           {/* Focus */}
-          <div className="space-y-2" >
+          <div className="space-y-2">
             <h1 className="text-lg text-center font-bold">Focus</h1>
             <ul className="flex flex-wrap gap-2 items-center justify-center">
               {['Performance', 'Accessibilité', 'Clarté'].map((focus, i) => (
@@ -134,7 +134,7 @@ export const Apropos = () => {
               </li>
             </motion.ul>
           </div>
-        </section>
+        </aside>
       </section>
     </section>
   )
