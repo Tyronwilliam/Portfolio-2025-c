@@ -13,8 +13,8 @@ export default function IntroLoader({
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const duration = 4000 // 4 seconds
-    const interval = 16 // ~60fps
+    const duration = 3000
+    const interval = 16
     const increment = 100 / (duration / interval)
 
     const timer = setInterval(() => {
@@ -37,7 +37,7 @@ export default function IntroLoader({
     <AnimatePresence>
       {!isComplete && (
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -100,17 +100,6 @@ export default function IntroLoader({
                       {Math.floor(progress).toString().padStart(3, '0')}
                       <span className="text-cyan-400">%</span>
                     </motion.div>
-
-                    {/* Subtitle */}
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5, duration: 0.8 }}
-                      className="text-lg font-light tracking-wider mt-4"
-                      style={{ color: '#94A3B8' }}
-                    >
-                      INITIALIZING SYSTEM
-                    </motion.p>
                   </div>
 
                   {/* Loading bar container */}
